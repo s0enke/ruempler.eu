@@ -5,3 +5,5 @@ CodeBuild - The missing piece
  
  - man landet direkt im entpackten code
  - parameter ueber env variablen direkt im CFN 
+ 
+ - codebuild ist wie jenkins und docker, nur cooler. es ist komplett hosted. kein docker hassle.
