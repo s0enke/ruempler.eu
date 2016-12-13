@@ -14,17 +14,16 @@ Nice intro intro cybernetics and systems theory. Nothing really new for me as I'
 #### [Ceci n'est pas \#devops](http://bridgetkromhout.com/speaking/2014/devopsdays-belgium/)
 
 * "DevOps is culture, anyone who says differently is selling something. Tools are necessary but not sufficient. Talking about DevOps is not DevOps."
-* fun experiement replace every occurrence of "DevOps" with "empathy" and see what happens ;-) reminded me of the ["butt plugin"](https://chrome.google.com/webstore/detail/cloud-to-butt-plus/apmlngnhgbnjpajelfkmabhkfapgnoai?hl=en))
+* fun experiment replace every occurrence of "DevOps" with "empathy" and see what happens ;-) reminded me of the ["butt plugin"](https://chrome.google.com/webstore/detail/cloud-to-butt-plus/apmlngnhgbnjpajelfkmabhkfapgnoai?hl=en))
 
 #### [Cognitive Biases in Tech: Awareness of our own bugs in decision making](https://speakerdeck.com/nigelkersten/cognitive-biases-in-tech-awareness-of-our-own-bugs-in-decision-making)
 
-* Book is mainly backed by [the book "Thinking, fast and slow"](http://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow)
+* Talk is mainly backed by [the book "Thinking, fast and slow"](http://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow)
 * Brain is divided in System 1 and System 2
 * System 2 gets tired easily: Do important decisions in the morning (e. g. monolith vs. micro-service), postpone trivial ones to the evening (e. g. what to cook for dinner)
 * great hints for better post mortems
 
-#### [5 years of metrics and
-monitoring](https://speakerdeck.com/auxesis/5-years-of-metrics-and-monitoring)
+#### [5 years of metrics and monitoring](https://speakerdeck.com/auxesis/5-years-of-metrics-and-monitoring)
 
 * [great recap on infoq](http://www.infoq.com/news/2014/10/5-years-metrics-monitoring)
 * You really have to focus on how to visualize stuff. Looks there needs to be expertise for this in a company which wants to call itself "metrics driven" or "data driven"

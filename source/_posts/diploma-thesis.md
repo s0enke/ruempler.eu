@@ -12,5 +12,5 @@ Hierzu werden die einzelnen Methodenbausteine (z. B. "Daily Standup" oder "Pair 
 
 Vielen Dank an meine Frau Mila, [Boris](https://twitter.com/3oris), [Judith](http://www.judithandresen.com/) und [Bracki](https://twitter.com/bracki), die fleißig und unermüdlich korrekturgelesen sowie wichtige inhaltliche Kritik geliefert haben!
 
-[Download der Diplomarbeit **"Wissensmanagement als integraler Bestandteil des Software Engineerings - Konzeption einer Vorgehensweise unter Einbindung agiler Modelle am Beispiel des Web 2.0-Unternehmens Jimdo"**](http://www.ruempler.eu/app/download/7068269248/Diplomarbeit.pdf?t=1359201160)
+[Download der Diplomarbeit **"Wissensmanagement als integraler Bestandteil des Software Engineerings - Konzeption einer Vorgehensweise unter Einbindung agiler Modelle am Beispiel des Web 2.0-Unternehmens Jimdo"**](diploma_thesis.pdf)
 
