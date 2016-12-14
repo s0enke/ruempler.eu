@@ -4,8 +4,6 @@ date: 2010-10-17
 ---
 the last weekend i attended to **[devopsdays](http://www.devopsdays.org/)** in hamburg. first thanks to **[patrick debois](http://twitter.com/#!/patrickdebois)** and **[marcel wegermann](http://pc0fc2375091e8a53)** for doing a really great job of conference organisation. and thanks to the sponsors making the location, food and beer possible ;)
 
-!["spike" morelli on stage](https://image.jimcdn.com/app/cms/image/transf/dimension=484x10000:format=jpg/path/sa96aabd4fda6ca54/image/if322ab66fdea0a31/version/1287352455/image.jpg)"spike" morelli on stage
-
 [DevOps](http://en.wikipedia.org/wiki/DevOps) is a relatively young movement of people that think developers, operations and also QA have to work together instead of
 creating departments and isles. It's about **communication** and **automation of software delivery processes**.
 
