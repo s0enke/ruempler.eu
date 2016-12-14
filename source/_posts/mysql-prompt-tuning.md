@@ -2,14 +2,14 @@
 title:  mysql prompt tuning
 date: 2010-10-11
 ---
-mysql \* devop
-
-`mysql> prompt (\u@\h) [\d]>  
+```
+mysql> prompt (\u@\h) [\d]>  
 PROMPT set to '(\u@\h) [\d]>'  
-(debian-sys-maint@localhost) [cms]>`
+(debian-sys-maint@localhost) [cms]>
+```
 
 persistent in bashrc:
-
-    
-    export MYSQL_PS1='(\u@\h) [\d]> '
+```   
+export MYSQL_PS1='(\u@\h) [\d]> '
+```
  
