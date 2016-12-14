@@ -30,7 +30,7 @@ archive_type: 'monthly'
 show_count: false
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-42296217-1
 favicon: /favicon.png
 twitter: s0enke
 google_plus:
