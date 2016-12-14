@@ -2,11 +2,9 @@
 title:  How to install and use a newer version (3.x) of NPM on AWS Lambda.
 date: 2016-07-19
 ---
-My current experiment is to build a serverless deploy pipeline (With AWS CodePipeline) which uses AWS Lambda for the build steps. One step includes to invoke NPM to build a static website out of
-JavaScript components (which would be deployed to an S3 bucket in a later step).
+My current experiment is to build a serverless deploy pipeline (With AWS CodePipeline) which uses AWS Lambda for the build steps. One step includes to invoke NPM to build a static website out of JavaScript components (which would be deployed to an S3 bucket in a later step).
 
-Ok, so let's go ahead and look what is actually installed in the preconfigured Node 4.3 env on AWS Lambda. First we want to find out if NPM is actually already installed. So we just create a new
-Lambda function which invokes a \`find' command, here is the used source code: 
+Ok, so let's go ahead and look what is actually installed in the preconfigured Node 4.3 env on AWS Lambda. First we want to find out if NPM is actually already installed. So we just create a new Lambda function which invokes a \`find' command, here is the used source code: 
 
     
     exports.handler = (event, context, callback) => {  
@@ -53,7 +51,6 @@ Ok, so my next step was to find the correct path to npm-cli.js, so I have a chan
     
     console.log(child_process.execSync('find /usr -type f -name npm-cli.js', {encoding: 'utf-8'}));
     
-
     
     /usr/local/lib64/node-v4.3.x/lib/node_modules/npm/bin/npm-cli.js
     
@@ -74,8 +71,7 @@ gives us:
 
 **But NAY, it's an old version! **
 
-So let's go ahead and try to install a newer version! Lambda gives us a writable `/tmp`, so we could use that as a target dir. NPM actually wants to do much stuff in the
-`$HOME` directory (e.g. trying to create cache dirs), but it is not writable within a Lambda env.
+So let's go ahead and try to install a newer version! Lambda gives us a writable `/tmp`, so we could use that as a target dir. NPM actually wants to do much stuff in the `$HOME` directory (e.g. trying to create cache dirs), but it is not writable within a Lambda env.
 
 So my "hack" was to set the `$HOME` to `/tmp`, and then install a newer version of NPM into it (by using the `--prefix option`):
 
@@ -91,7 +87,7 @@ Ok, NPM got installed and is ready to use!
     npm@3.10.5 ../../tmp/node_modules/npm
     
 
-The last step is to symlink the npm wrapperso it can be used without hassle. And actually many build systems seem to expect a working npm executable:
+The last step is to symlink the npm wrapper so it can be used without hassle. And actually many build systems seem to expect a working npm executable:
 
     
     fs.mkdirSync('/tmp/bin');
@@ -112,5 +108,4 @@ Some additional learnings:
     // ... npm install steps ...
     
 
-* Downloading and installing NPM every time the build step is executed makes it more flaky (remember the fallacies of networking!). It also reduces the available execution time by 10 seconds
-(the time it takes to download and install NPM). One could pack the installed npm version as an own Lambda function in order to decouple it. But that's a topic for another blog post. 
+* Downloading and installing NPM every time the build step is executed makes it more flaky (remember the fallacies of networking!). It also reduces the available execution time by 10 seconds (the time it takes to download and install NPM). One could pack the installed npm version as an own Lambda function in order to decouple it. But that's a topic for another blog post. 
