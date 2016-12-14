@@ -2,15 +2,11 @@
 title:  Replicating AWS RDS MySQL databases to external slaves
 date: 2013-07-07
 ---
-**Update:** Using [**an external slave with an RDS master** is now possible as well as **RDS as a slave
-with an external master**](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html")  
+**Update:** Using [**an external slave with an RDS master** is now possible as well as **RDS as a slave with an external master**](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html")  
 
-Connecting external MySQL slaves to AWS RDS mysql instances is one of the most wanted features, for example to have migration strategies into and out of RDS or to support strange replication
-chains for legacy apps. Listening to binlog updates is also a [**great way to update search indexes or to
-invalidate caches**](https://github.com/noplay/python-mysql-replication).  
+Connecting external MySQL slaves to AWS RDS mysql instances is one of the most wanted features, for example to have migration strategies into and out of RDS or to support strange replication chains for legacy apps. Listening to binlog updates is also a [**great way to update search indexes or to invalidate caches**](https://github.com/noplay/python-mysql-replication).  
   
-As of now it is possible to access binary logs from outside RDS with [**the release of MySQL
-5.6 in RDS**](http://aws.typepad.com/aws/2013/07/mysql-56-support-for-amazon-rds.html). What amazon does not mention is the possibility to connect external slaves to RDS.  
+As of now it is possible to access binary logs from outside RDS with [**the release of MySQL 5.6 in RDS**](http://aws.typepad.com/aws/2013/07/mysql-56-support-for-amazon-rds.html). What amazon does not mention is the possibility to connect external slaves to RDS.  
   
 Here is the proof of concept (details on how to set up a master/slave setup is not the focus here :-) )  
   
@@ -44,8 +40,7 @@ So first lets check if binlogs are enabled on the newly created RDS database:
     1 row in set (0.12 sec)
     
 
-Great! Lets have another check with the mysqlbinlog tool as stated in the [RDS
-docs.](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.MySQL.html)
+Great! Lets have another check with the mysqlbinlog tool as stated in the [RDS docs.](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.MySQL.html)
 
 But first we have to create a user on the RDS instance which will be used by the connecting slave.
 
@@ -77,9 +72,7 @@ Now lets have a look at the binlog:
     /*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;
     
 
-As we can see, even the grants have been written to the RDS binlog. Great! Now lets try to connect a real slave! Just set up a vanilla mysql server somewhere (local, vagrant, whatever) and assign
-a server-id to the slave. RDS uses some (apparently) random server-ids like 1517654908 or 933302652 so I currently don't know how to be sure there are no conflicts with external slaves. Might be
-one of the reasons AWS doesn't publish the fact that slave connects actually got possible.  
+As we can see, even the grants have been written to the RDS binlog. Great! Now lets try to connect a real slave! Just set up a vanilla mysql server somewhere (local, vagrant, whatever) and assign a server-id to the slave. RDS uses some (apparently) random server-ids like 1517654908 or 933302652 so I currently don't know how to be sure there are no conflicts with external slaves. Might be one of the reasons AWS doesn't publish the fact that slave connects actually got possible.  
   
 After setting the server-id and optionally a database to replicate:
 
@@ -184,61 +177,4 @@ And it's getting replicated:
       `data` varchar(100) DEFAULT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1
     1 row in set (0.00 sec)
-    
-
-[Kommentar schreiben](#)
-
-Kommentare: _23_ 
-
-* **\#1**
-
-**rb** (_Montag, 08 Juli 2013 04:26_)
-
-Does this mean it is possible to perform MySQL master-master replication with RDS and an external DB(s)?
-* **\#2**
-
-[s0enke](http://www.ruempler.eu/) (_Dienstag, 09 Juli 2013 03:05_)
-
-@rb: Probably not - as still you cannot replicate INTO RDS. But there is a possible workaround with tungsten: https://docs.continuent.com/wiki/display/TEDOC/Replicating+from+MySQL+to+Amazon+RDS
-* **\#3**
-
-**Ludo** (_Donnerstag, 29 August 2013 22:56_)
-
-nice!
-* **\#4**
-
-[Ross](http://www.avantalytics.com) (_Sonntag, 01 September 2013 16:00_)
-
-It would be nice to see the process for creating a slave from an existing rds master as there is no way to force a global write lock on the tables and you'd need to deal with dumps etc.
-* **\#5**
-
-**Ludo.helder@gmail.com** (_Montag, 16 September 2013 17:43_)
-
-Question:  
-why do you set log\_position=0 on the slave when it's 120 on the master?
-* **\#6**
-
-**Anonymous Coward** (_Montag, 23 September 2013 04:03_)
-
-Man. Your background is pretty, but offensive when trying to read your page.
-* **\#7**
-
-**victoroloan** (_Mittwoch, 02 Oktober 2013 11:35_)
-
-Hi There,  
-  
-master-mysql\> GRANT REPLICATION SLAVE ON \*.\* TO 'repl'@'%'  
-does not work on me.  
-  
-ERROR 1045 (28000): Access denied for user 'repl'@'%' (using password: YES)
-* **\#8**
-
-**Neal** (_Mittwoch, 02 Oktober 2013 17:43_)
-
-You can now replicate TO and FROM RDS instances with outside MySQL instances:  
-  
-To import into RDS:  
-http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.NonRDSRepl.html  
-  
-To export from RDS:  
-http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Exporting.NonRDSRepl.html
+   
