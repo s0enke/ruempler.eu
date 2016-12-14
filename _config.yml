@@ -69,3 +69,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+google_analytics: UA-42296217-1
