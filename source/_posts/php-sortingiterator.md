@@ -1,6 +1,6 @@
 ---
 title: "PHP: SortingIterator"
-date: 2008-09-08
+date: 2008-08-09
 ---
 I just had the need for an Iterator that can sort itself by a user defined callback.
 
