@@ -32,11 +32,8 @@ So I was forced to find a solution to setup a fresh external slave from an exist
 First I started to contemplate a plan with master downtime in order to exercise the simple case first.
 
 Here is the plan:  
-  
 
 1. Set binlog rentition on the RDS master to a high value so you are armed against potential network failures:
-
-    
     > call mysql.rds_set_configuration('binlog retention hours', 24*14);  
     Query OK, 0 rows affected (0.10 sec)  
       
@@ -49,24 +46,16 @@ Here is the plan:
     1 row in set (0.14 sec)  
       
     Query OK, 0 rows affected (0.14 sec)
-    
-
 2. Deny all application access to the RDS database so no new writes can happen and the binlog position stays the same. Do that by removing inbound port 3306 access rules (except your admin connection) from the security groups attached to your RDS instance. Write them down because you have to re-add them later. At this time your master is "offline".
 3. Get the current binlog file and position from the master, do it at least 2 times and wait some seconds inbetween in order to validate it does not change anymore. Also check `SHOW PROCESSLIST` whether you and rdsadmin are the only connected users against the RDS master.
 4. Get a mysqldump (without locking which is forbidden by RDS, as stated above):
-
-    
     $ mysqldump -h <read replica endpoint> -u <user> -p<password> --single-transaction --routines --triggers --databases <list of databases> | gzip > mydump.sql.gz
-    
-
 5. rsync/scp to slave
-6. call STOP SLAVE on your broken or new external slave
+6. call `STOP SLAVE` on your broken or new external slave
 7. Import dump
 8. Set binlog position on the external slave (I assume the remaining slave settings, e. g. credentials, are already set up).
 
-    
-    CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin-changelog.021761', MASTER_LOG_POS=120
-    
+        CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin-changelog.021761', MASTER_LOG_POS=120
 
 9. Re-add RDS master ingress security rules (or at least add the inbound security rule which allows the external slave to connect to the RDS master).
 10. Start external slave. The slave should now catch up with the RDS master.
