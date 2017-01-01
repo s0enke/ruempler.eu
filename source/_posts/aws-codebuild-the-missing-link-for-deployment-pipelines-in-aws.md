@@ -1,6 +1,5 @@
 ---
 title: 'AWS CodeBuild: The missing link for deployment pipelines in AWS'
-tags: aws cloudformation codebuild codepipeline serverless
 date: 2016-12-19 20:50:36
 ---
 
