@@ -34,9 +34,10 @@ First I started to contemplate a plan with master downtime in order to exercise 
 Here is the plan:  
 
 1. Set binlog rentition on the RDS master to a high value so you are armed against potential network failures:
-    > call mysql.rds_set_configuration('binlog retention hours', 24*14);  
-    Query OK, 0 rows affected (0.10 sec)  
-      
+
+        > call mysql.rds_set_configuration('binlog retention hours', 24*14);  
+        Query OK, 0 rows affected (0.10 sec)  
+        
         > call mysql.rds_show_configuration;  
         +------------------------+-------+------------------------------------------------------------------------------------------------------+  
         | name                   | value | description                                                                                          |  
