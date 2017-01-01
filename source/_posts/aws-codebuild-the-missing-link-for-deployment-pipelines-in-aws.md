@@ -1,8 +1,9 @@
 ---
-title: "AWS CodeBuild: The missing link for deployment pipelines in AWS"
-date: 2016-12-19 20:50:36
+title: 'AWS CodeBuild: The missing link for deployment pipelines in AWS'
 tags: aws cloudformation codebuild codepipeline serverless
+date: 2016-12-19 20:50:36
 ---
+
 
 This is a follow-up of my AWSAdvent article [Serverless everything: One-button serverless deployment pipeline for a serverless app
 ](https://www.awsadvent.com/2016/12/14/serverless-everything-one-button-serverless-deployment-pipeline-for-a-serverless-app/), which extends the example deployment pipeline with AWS CodeBuild.
