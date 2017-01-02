@@ -9,7 +9,7 @@ This is a follow-up of my AWSAdvent article [Serverless everything: One-button s
 
 Deployment pipelines are very common today, as they are usually part of a continuous delivery/deployment workflow. While it's possible to use e.g. projects like [Jenkins](https://jenkins.io/) or [concourse](https://concourse.ci/) for those pipelines, I prefer using managed services in order to minimize operations and maintenance so I can concentrate on generating business value. Luckily, AWS has a service called CodePipeline which makes it easy to create deployment pipelines with several stages and actions such as downloading the source code from GitHub, and executing build steps.
 
-For the build steps, they are several options like invoking an external Jenkins Job, or SoranoCi etcpp. But when you want to stay in AWS land, your options were quite limited until recently. The only pure AWS option for CodePipeline build steps (without adding operational overhead, e.g. managing servers or containers) was invoking Lambda functions, which has several drawbacks that I all experienced:
+For the build steps, there are several options like invoking an external Jenkins Job, or SoranoCi etcpp. But when you want to stay in AWS land, your options were quite limited until recently. The only pure AWS option for CodePipeline build steps (without adding operational overhead, e.g. managing servers or containers) was invoking Lambda functions, which has several drawbacks that I all experienced:
  
 ## Using Lambda as Build Steps
 
@@ -56,7 +56,7 @@ By the way, actually there is a workaround: In CloudFormation, it's possible to 
             ...
           }
 ```
-While this has the advantage that the pipeline and the build step code are now in one place (the CloudFormation template), this comes at the cost of losing e.g. IDE functions for the function code like syntax checking and highlighting. Another point: the inline code is limited to 4096 characters length, a limit which can be reached rather fast. Also the CloudFormation templates tends to become very long and confusing. In the end using inline code just felt awkward for me ...
+While this has the advantage that the pipeline and the build step code are now in one place (the CloudFormation template), this comes at the cost of losing e.g. IDE functions for the function code like syntax checking and highlighting. Another point: the inline code is limited to 4096 characters length, a limit which can be reached rather fast. Also the CloudFormation templates tend to become very long and confusing. In the end using inline code just felt awkward for me ...
 
 ### No AWS CLI installed in Lambda
 
@@ -89,9 +89,9 @@ phases:
         - "cd backend && serverless deploy"
         - "cd backend && aws cloudformation describe-stacks --stack-name $(serverless info | grep service: | cut -d' ' -f2)-$(serverless info | grep stage: | cut -d' ' -f2) --query 'Stacks[0].Outputs[?OutputKey==`ServiceEndpoint`].OutputValue' --output text > ../service_endpoint.txt"
 artifacts:
-files:
-  - frontend/**/*
-  - service_endpoint.txt
+  files:
+    - frontend/**/*
+    - service_endpoint.txt
 ```
 
 This example shows a `buildspec.yml` with two main sections: `phases` and `artifacts`:
@@ -131,7 +131,7 @@ You could also specify that CodeBuild should search for a `buildspec.yml` in the
 
 ### CodeBuild and CodePipeline
 
-Last but not least, let's have look how CodePipeline and CodeBuild integrate by using an excerpt from [the CloudFormation template](https://github.com/s0enke/cloudformation-templates/blob/master/templates/pipeline-serverless-backend-npm-frontend.yml) which describes the pipeline as code:
+Last but not least, let's have a look at how CodePipeline and CodeBuild integrate by using an excerpt from [the CloudFormation template](https://github.com/s0enke/cloudformation-templates/blob/master/templates/pipeline-serverless-backend-npm-frontend.yml) which describes the pipeline as code:
 
 ```yaml
 Pipeline:
