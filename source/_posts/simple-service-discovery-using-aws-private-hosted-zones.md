@@ -2,6 +2,8 @@
 title: Simple service discovery using AWS Private Hosted Zones
 date: 2015-04-23
 ---
+
+
 A rather simple, but effective and easy-to-setup service discovery (SD) mechanism with near-zero maintenance costs can be build by utilizing the AWS Private Hosted Zone (PHZ) feature. PHZs allows you to connect a Route53 Hosted Zone to a VPC, which in turn means that DNS records in that zone are only visible to attached VPCs.
 
 Before digging deeper into the topic, let's try to find a definition for 'simple service discovery'. I'd say in 99% of the cases service discovery is something like "I am an application called `myapp`, please give me (for example) my database and cache endpoints, and service Y which I rely on", so the service consumer and service announcer need to speak a common language, and we need no manual human interaction. This is at least how [Wikipedia](http://en.wikipedia.org/wiki/Service_discovery "http://en.wikipedia.org/wiki/Service_discovery") defines service discovery protocols:
@@ -101,4 +103,4 @@ The basic idea of doing discovery by just resolving bare hostnames was initially
 
 He pointed out that those setups included DNSSEC as well in order to prevent DHCP and/or DNS spoofing. We currently don't consider this a problem in an AWS VPC.
 
-<sup>1</sup>It looks like HashiCorp can integrate IaaS compoenents with their Autodiscovery by using their pay product 'Atlas" as a bridge between TerraForm and Consul but I didn't validate this hypothesis.
+<sup>1</sup>It looks like HashiCorp can integrate IaaS components with their Autodiscovery by using their pay product 'Atlas" as a bridge between TerraForm and Consul but I didn't validate this hypothesis.
