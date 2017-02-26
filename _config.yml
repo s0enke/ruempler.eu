@@ -76,3 +76,5 @@ feed:
   limit: 20
   hub:
   content:
+
+disqus_shortname: ruempler
