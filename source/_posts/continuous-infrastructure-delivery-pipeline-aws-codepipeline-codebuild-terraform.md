@@ -7,11 +7,11 @@ tags:
 ---
 
 
-While I am a heavy CloudFormation user, sometimes its limitations bug me, especially when I look a little bit jealously at the Terraform users who have all those cool features. In this article, I want to explore and showcase how to build a low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipeline for Terraform, by using only AWS components. 
+In this article, I want to explore and showcase how to build a low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipeline for Terraform, by only using AWS components. 
  
 ## CloudFormation
 
-CloudFormation is a good solution to start Infrastructure-as-Code (Iac) projects in AWS, because it offers a low-maintenance and easy-to-start solution. On the other hand, it can have some drawbacks based on the use case or the usage level. Here are some points which pop up regularly:
+CloudFormation is the built-in solution for Infrastructure-as-Code (Iac) in AWS. It's usually a good choice because it offers a low-maintenance and easy-to-start solution. On the other hand, it can have some drawbacks based on the use case or the usage level. Here are some points which pop up regularly:
 
  - AWS-only: CloudFormation has no native support for third-party services. It actually supports [custom resources](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html), but those are usually awkward to write and maintain. I would only use them as a last resort.
  - Not all AWS services/features supported: The usual AWS feature release process is that a component team releases a new feature, but the CloudFormation part is missing (the CloudFormation team at AWS is apparently a separate team with its own roadmap). And since CloudFormation isn’t open source, we cannot add the missing functionality by ourselves. 
