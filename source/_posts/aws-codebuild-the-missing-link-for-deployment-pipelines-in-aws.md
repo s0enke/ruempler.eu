@@ -182,4 +182,4 @@ Deployment pipelines are as valuable as the software itself as they ensure relia
  - no management of own infrastructure like Docker clusters as "build farms".
  - no bloated Lambda functions for build steps
  
-This article showcases a CloudFormation template which should help the readers to get started with the own CloudFormation/CodePipeline/CodeBuild combo which provisions within minutes. There are no excuses anymore for manual and/or undocumented software deployments within AWS anymore ;-)
+This article showcases a CloudFormation template which should help the readers to get started with the own CloudFormation/CodePipeline/CodeBuild combo which provisions within minutes. There are no excuses anymore for manual and/or undocumented software deployments within AWS ;-)
