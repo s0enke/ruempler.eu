@@ -92,9 +92,6 @@ The `InvokeTerraformAction` will call CodeBuild, which looks like this:
 
 ![CodeBuild log output screenshot](codebuild.png)
 
-
-
-
 ## Stronger together
 
 The real power of both TerraForm and CloudFormation comes to light when we combine them, as we can actually use best of both worlds. This will be a topic of a coming blog post.
