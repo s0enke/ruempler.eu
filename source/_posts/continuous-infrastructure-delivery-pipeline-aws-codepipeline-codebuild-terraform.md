@@ -6,6 +6,7 @@ date: 2017-02-26 14:27:59
 tags:
 ---
 
+![Overview](overview.png)
 
 This article explores how to build low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipelines for [Terraform](https://www.terraform.io), by using AWS building blocks CloudFormation, CodePipeline and CodeBuild.
  
