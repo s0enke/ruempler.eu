@@ -76,7 +76,7 @@ Last, but not least, `terraform apply` is called which will take all `.tf` files
  
 ### Pipeline as Code
 
-The delivery pipeline used as an example in this article is available as an AWS CloudFormation template, which means that it is codified and reproducible. Yes, that also means that CloudFormation is used to generate a delivery pipeline which will, in turn, call Terraform. And that we did not have to touch any servers, VMs or containers. 
+The delivery pipeline used as an example in this article [is available as an AWS CloudFormation template](https://github.com/s0enke/cloudformation-templates/blob/master/templates/pipeline-terraform.yml), which means that it is codified and reproducible. Yes, that also means that CloudFormation is used to generate a delivery pipeline which will, in turn, call Terraform. And that we did not have to touch any servers, VMs or containers. 
 
 You can try out the CloudFormation one-button template here:
 
@@ -103,7 +103,7 @@ The real power of both TerraForm and CloudFormation comes to light when we combi
   
 ## Summary 
 
-This article showed how AWS CodePipeline and CodeBuild can be used to execute Terraform runs in a Continuous Delivery spirit, while still minimizing operational overhead and costs. A CloudFormation template is provided to ease the set up of such a pipeline. It can be used as a starting point for own TerraForm projects.
+This article showed how AWS CodePipeline and CodeBuild can be used to execute Terraform runs in a Continuous Delivery spirit, while still minimizing operational overhead and costs. A [CloudFormation template is provided](https://github.com/s0enke/cloudformation-templates/blob/master/templates/pipeline-terraform.yml) to ease the set up of such a pipeline. It can be used as a starting point for own TerraForm projects.
 
 ## References
 
