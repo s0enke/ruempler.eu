@@ -86,8 +86,6 @@ You need a GitHub repository containing one or more `.tf` files, which will in t
 
 Once the CloudFormation stack has been created, the CodePipeline will run initially:
   
-A pipeline run 
- 
 ![CodePipeline screenshot](pipeline.png)
 
 The `InvokeTerraformAction` will call CodeBuild, which looks like this:
