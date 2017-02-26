@@ -1,7 +1,11 @@
 ---
-title: Continuous Infrastructure Delivery Pipeline with AWS CodePipeline, CodeBuild and Terraform 
+title: >-
+  Continuous Infrastructure Delivery Pipeline with AWS CodePipeline, CodeBuild
+  and Terraform
+date: 2017-02-26 14:27:59
 tags:
 ---
+
 
 While I am a heavy CloudFormation user, sometimes its limitations bug me, especially when I look a little bit jealously at the Terraform users who have all those cool features. In this article, I want to explore and showcase how to build a low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipeline for Terraform, by using only AWS components. 
  
