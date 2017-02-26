@@ -66,7 +66,7 @@ CodeBuild is instructed by a YAML configuration, similar to e.g. TravisCI ([I ex
         - source /tmp/aws_cred_export.txt && terraform apply
 ```
 
-First, in the `install` phase, the tool `jq` is installed to be used for a little workaround I had to wrote to get the AWS credentials from the metadata service, as [Terraform does not yet support this yet](https://github.com/hashicorp/terraform/issues/8746). After retrieving the AWS credentials for later usage, Terraform gets be downloaded, checksum'd and installed (they have no Linux repositories).
+First, in the `install` phase, the tool `jq` is installed to be used for a little workaround I had to wrote to get the AWS credentials from the metadata service, as [Terraform does not yet support this yet](https://github.com/hashicorp/terraform/issues/8746). After retrieving the AWS credentials for later usage, Terraform is downloaded, checksum'd and installed (they have no Linux repositories).
  
 In the build phase, first the Terraform state file location is set up. As mentioned earlier, it's possible to use [S3 buckets as a state file location](https://www.terraform.io/docs/state/remote/s3.html), so we are going to tell Terraform to store it there.
 
