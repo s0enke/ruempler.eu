@@ -7,7 +7,7 @@ tags:
 ---
 
 
-In this article, I want to explore and showcase how to build a low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipeline for Terraform, by only using AWS components. 
+This article explores how to build low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipelines for [Terraform](https://www.terraform.io), by using AWS building blocks CloudFormation, CodePipeline and CodeBuild 
  
 ## CloudFormation
 
