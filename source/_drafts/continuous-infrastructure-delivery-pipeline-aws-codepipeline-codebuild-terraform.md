@@ -3,15 +3,15 @@ title: Continuous Infrastructure Delivery Pipeline with AWS CodePipeline, CodeBu
 tags:
 ---
 
-While I am a heaver CloudFormation user, sometimes its limitations really bug me, especially when I look a little bit jealously at the Terraform users who have all those cool features. In this article I want to explore and showcase how to build a low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipeline for Terraform, by using only AWS components. 
+While I am a heavy CloudFormation user, sometimes its limitations bug me, especially when I look a little bit jealously at the Terraform users who have all those cool features. In this article, I want to explore and showcase how to build a low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipeline for Terraform, by using only AWS components. 
  
 ## Cloudformation
 
-CloudFormation is generally a good solution to start Infrastructure-as-Code (Iac) projects in AWS, because it offers a low maintenance and easy-to-start solution. On the other hand, it can have some drawbacks based on the use case or the usage level. Here are some points which pop up regularly:
+CloudFormation is a good solution to start Infrastructure-as-Code (Iac) projects in AWS, because it offers a low-maintenance and easy-to-start solution. On the other hand, it can have some drawbacks based on the use case or the usage level. Here are some points which pop up regularly:
 
- - AWS-only: CloudFormation has no native support for third-party services. It actually supports [custom resources](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html), but those are usually awkward to write and maintain. I would only use them as last resort.
- - Not all AWS services / features supported: The usual AWS feature release process is that a component team releases a new feature, but the CloudFormation part is missing (the CloudFormation team at AWS is apparently a separate team with its own road map). And since CloudFormation isn’t open source, we cannot add the missing functionality by ourselves. 
-- No imports of existing resources: AWS resources created outside of CloudFormation cannot be "imported" into a stack. This would be helpful for example when resources had been created manually earlier before (maybe because CloudFormation did not support them yet).
+ - AWS-only: CloudFormation has no native support for third-party services. It actually supports [custom resources](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html), but those are usually awkward to write and maintain. I would only use them as a last resort.
+ - Not all AWS services/features supported: The usual AWS feature release process is that a component team releases a new feature, but the CloudFormation part is missing (the CloudFormation team at AWS is apparently a separate team with its own roadmap). And since CloudFormation isn’t open source, we cannot add the missing functionality by ourselves. 
+- No imports of existing resources: AWS resources created outside of CloudFormation cannot be "imported" into a stack. This would be helpful for example when resources had been set up manually earlier before (maybe because CloudFormation did not support them yet).
  
 ## Terraform to the rescue!
 
@@ -19,10 +19,10 @@ Terraform is an IaC tool from HashiCorp, similar to CloudFormation, but with a b
 
 Terraform has several advantages over CloudFormation, here are some of them:
 
- - **Open source**: Terraform is open source so you can patch it and send changes upstream to make it better. This is great because anyone can for example add new services or features, or fix bugs. It's actually not uncommon that Terraform is even faster than CloudFormation with implementing new AWS features.
- - **Supports a wide range of services, not only AWS**: This enables automating bigger ecosystems spanning e.g. multiple clouds or providers. In CloudFormation one would have to fall back to awkward custom resources. A particular use-case is provisioning databases and users of an MySQL database, 
- - **Data sources**: While CloudFormation has only "[imports](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html)" and some intrinsic functions to lookup values (e.g. from existing resources), Terraform provides a wide range of data sources (just have a look at [this impressive list](https://www.terraform.io/docs/providers/aws/d/acm_certificate.html).
- - **Imports**: Terraform can [import existing resources](https://www.terraform.io/docs/import/) (if supported by the resources type)! As mentioned, this becomes handy when working with a brown-field infrastructure, e.g. manually created resources.
+ - **Open source**: Terraform is open source so you can patch it and send changes upstream to make it better. This is great because anyone can, for example, add new services or features, or fix bugs. It's not uncommon that Terraform is even faster than CloudFormation with implementing new AWS features.
+ - **Supports a broad range of services, not only AWS**: This enables automating bigger ecosystems spanning e.g. multiple clouds or providers. In CloudFormation one would have to fall back to awkward custom resources. A particular use-case is provisioning databases and users of a MySQL database, 
+ - **Data sources**: While CloudFormation has only "[imports](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html)" and some intrinsic functions to lookup values (e.g. from existing resources) Terraform provides a wide range of data sources (just have a look at [this impressive list](https://www.terraform.io/docs/providers/aws/d/acm_certificate.html).
+ - **Imports**: Terraform can [import existing resources](https://www.terraform.io/docs/import/) (if supported by the resources type)! As mentioned, this becomes handy when working with a brownfield infrastructure, e.g. manually created resources.
   
 ## (Some) Downsides of Terraform
 
