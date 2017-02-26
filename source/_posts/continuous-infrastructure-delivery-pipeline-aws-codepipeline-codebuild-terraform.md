@@ -13,9 +13,9 @@ This article explores how to build low-maintenance [Continuous Delivery](https:/
 
 CloudFormation is the built-in solution for Infrastructure-as-Code (Iac) in AWS. It's usually a good choice because it offers a low-maintenance and easy-to-start solution. On the other hand, it can have some drawbacks based on the use case or the usage level. Here are some points which pop up regularly:
 
- - AWS-only: CloudFormation has no native support for third-party services. It actually supports [custom resources](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html), but those are usually awkward to write and maintain. I would only use them as a last resort.
- - Not all AWS services/features supported: The usual AWS feature release process is that a component team releases a new feature, but the CloudFormation part is missing (the CloudFormation team at AWS is apparently a separate team with its own roadmap). And since CloudFormation isn’t open source, we cannot add the missing functionality by ourselves. 
-- No imports of existing resources: AWS resources created outside of CloudFormation cannot be "imported" into a stack. This would be helpful for example when resources had been set up manually earlier before (maybe because CloudFormation did not support them yet).
+- **AWS-only**: CloudFormation has no native support for third-party services. It actually supports [custom resources](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html), but those are usually awkward to write and maintain. I would only use them as a last resort.
+- **Not all AWS services/features supported**: The usual AWS feature release process is that a component team (e.g. EC2) releases a new feature, but the CloudFormation part is missing (the CloudFormation team at AWS is apparently a separate team with its own roadmap). And since CloudFormation isn’t open source, we cannot add the missing functionality by ourselves. 
+- **No imports of existing resources**: AWS resources created outside of CloudFormation cannot be "imported" into a stack. This would be helpful for example when resources had been set up manually earlier before (maybe because CloudFormation did not support them yet).
  
 ## Terraform to the rescue!
 
