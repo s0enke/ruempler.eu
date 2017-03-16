@@ -15,4 +15,4 @@ ansible localhost -m cloudformation -a "stack_name=stack_name template=path/to/t
 ```
 It will create a new or update an existing CloudFormation stack and wait until the operation has finished. It won't complain if there are no updates to be performed.
 
-PS: [Michael Wittig](https://michaelwittig.info/) [has released a wrapper written in Node](https://github.com/widdix/cfn-create-or-update) for this problem, too!
+PS: [Michael Wittig](https://michaelwittig.info/) [has released a CloudFormation CLI wrapper](https://cloudonaut.io/painlessly-create-or-update-cloudformation-stack-idempotent/) (NPM module) for this problem, too!
