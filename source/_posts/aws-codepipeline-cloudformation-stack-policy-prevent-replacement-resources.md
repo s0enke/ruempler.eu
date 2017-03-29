@@ -31,7 +31,7 @@ Properties:
         ActionMode: CREATE_UPDATE
         RoleArn: !GetAtt CloudFormationRole.Arn
         StackName: db
-        TemplatePath: db.yaml
+        TemplatePath: Source::db.yaml
         TemplateConfiguration: Source::db_stack_update_policy.json
       InputArtifacts:
       - Name: Source
