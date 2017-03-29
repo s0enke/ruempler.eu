@@ -5,7 +5,7 @@ date: 2017-03-29
 
 Some operations in CloudFormation trigger a [`REPLACEMENT`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html) of resources which can have unintended and catastrophic consequences, e.g. an RDS instance being replaced (which means that the current database will be **deleted** by CloudFormation after a new one has been created).
 
-While CloudFormation [does support deletion policies natively](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html) which disallow the deletion of resources, there is no simple way to do this for `REPLACEMENT`s as of writing this. 
+While CloudFormation [does support deletion policies natively](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html) which prevent the deletion of resources, there is no simple way to do this for `REPLACEMENT`s as of writing this. 
 
 When using CodePipeline in combination with CloudFormation to deploy infrastructure changes in an automated Continuous Delivery manner, one should have protection from accidental deletions even more mind.
 
