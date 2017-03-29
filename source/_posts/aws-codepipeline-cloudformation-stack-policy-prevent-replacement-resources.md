@@ -1,5 +1,5 @@
 ---
-title: "CodePipeline and CloudFormation with a stack policy to prevent `REPLACEMENT`s of resources"
+title: "CodePipeline and CloudFormation with a stack policy to prevent REPLACEMENTs of resources"
 date: 2017-03-29
 ---
 
