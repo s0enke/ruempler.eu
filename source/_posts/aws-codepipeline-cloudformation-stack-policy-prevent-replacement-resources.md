@@ -38,7 +38,7 @@ Properties:
       RunOrder: 1
 ```
 
-The important part is the `TemplateConfiguration` parameter which tells CloudFormation to look for a configuration at this particular path in the `Source` artifact. In this case `db_stack_update_policy.json`.
+The important part is the [`TemplateConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-cfn-artifacts.html#w1ab2c13c19c17) parameter which tells CloudFormation to look for a configuration at this particular path in the `Source` artifact. In this case `db_stack_update_policy.json`.
 
 `db_stack_update_policy.json` looks like this:
 ```
