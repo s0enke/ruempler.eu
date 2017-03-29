@@ -1,4 +1,7 @@
-# CodePipeline and CloudFormation with a stack policy to prevent `REPLACEMENT`s of resources
+---
+title: "CodePipeline and CloudFormation with a stack policy to prevent `REPLACEMENT`s of resources"
+date: 2017-03-29
+---
 
 Some operations in CloudFormation trigger a [`REPLACMENT`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html) of resources which can have unintended and catastrophic consequences, e.g. an RDS instance being replaced (which means that the current database will be **deleted** by CloudFormation after a new one has been created).
 
