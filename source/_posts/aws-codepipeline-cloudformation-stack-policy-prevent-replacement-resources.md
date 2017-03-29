@@ -7,7 +7,7 @@ Some operations in CloudFormation trigger a [`REPLACEMENT`](http://docs.aws.amaz
 
 While CloudFormation [does support deletion policies natively](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html) which prevent the deletion of resources, there is no simple way to do this for `REPLACEMENT`s as of writing this. 
 
-When using CodePipeline in combination with CloudFormation to deploy infrastructure changes in an automated Continuous Delivery manner, one should have protection from accidental deletions even more mind.
+When using CodePipeline in combination with CloudFormation to deploy infrastructure changes in an automated Continuous Delivery manner, one should have protection from accidental deletions even more mind. This blog post shows how to use [CloudFormation Stack Policies](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html) to protect critical resources from being replaced.
 
 Let's start with the CodePipeline (expressed as CloudFormation) piece which deploys a database stack called `db` (I assume you are confident with CloudFormation and CodePipeline):
 
