@@ -11,7 +11,7 @@ When using CodePipeline in combination with CloudFormation to deploy infrastruct
 
 Let's start with the CodePipeline (expressed as CloudFormation) piece which deploys a database stack called `db` (I assume you are confident with CloudFormation and CodePipeline):
 
-```
+```yaml
 Pipeline:
 Type: AWS::CodePipeline::Pipeline
 Properties:
@@ -41,7 +41,7 @@ Properties:
 The important part is the [`TemplateConfiguration`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-cfn-artifacts.html#w1ab2c13c19c17) parameter which tells CloudFormation to look for a configuration at this particular path in the `Source` artifact. In this case `db_stack_update_policy.json`.
 
 `db_stack_update_policy.json` looks like this:
-```
+```yaml
 {
   "StackPolicy" : {
     "Statement" : [
