@@ -80,6 +80,7 @@ Resources:
     Properties:
       Stages:
         ...
+        Actions:
         - Name: DeployApplication
           ...
           Configuration:
