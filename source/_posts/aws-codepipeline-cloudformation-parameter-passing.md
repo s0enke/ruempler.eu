@@ -97,10 +97,10 @@ An alternative way is to place a so called [template configuration](http://docs.
     ...
     TemplatePath: Source::application.yaml
     ParameterOverrides: '{"ApplicationParameterA": "foo", "ApplicationParameterB": "bar"}'
-    TemplateConfiguration: Source::aws/infrastructure/template_configuration.json
+    TemplateConfiguration: Source::template_configuration.json
 ```
 
-The template configuration could look like this:
+In our case, the `template_configuration.json` file would look like this:
 
 ```json
 {
