@@ -1,5 +1,5 @@
 ---
-title: AWS Continuous Infrastructure Delivery with CodePipeline and CloudFormation: How to pass Stack Parameters
+title: "AWS Continuous Infrastructure Delivery with CodePipeline and CloudFormation: How to pass Stack Parameters"
 date: 2017-04-10
 ---
 
