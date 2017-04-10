@@ -1,6 +1,6 @@
 ---
 title:  Replicating AWS RDS MySQL databases to external slaves
-date: 2013-07-07
+date: 2013-07-07 12:00:00
 ---
 **Update:** Using [**an external slave with an RDS master** is now possible as well as **RDS as a slave with an external master**](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html")  
 
