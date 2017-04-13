@@ -1,6 +1,6 @@
 ---
 title: 'AWS CodeBuild: The missing link for deployment pipelines in AWS'
-date: 2016-12-19 20:50:36
+date: 2016-12-19  12:00:00
 ---
 
 

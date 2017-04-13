@@ -1,6 +1,6 @@
 ---
 title:  Keeping your Pocket list clean with pocketcleaner and AWS Lambda
-date: 2016-01-10
+date: 2016-01-10 12:00:00
 ---
 Over the last years my Pocket reading queue got longer and longer. It actually dated back to stuff from 2013\. Over the time a realized I would never ever be able to keep up with it again.
 

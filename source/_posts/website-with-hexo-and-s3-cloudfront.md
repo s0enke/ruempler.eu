@@ -1,6 +1,6 @@
 ---
 title: Website now powered by Hexo, AWS CloudFront and S3 
-date: 2016-12-18 21:23:23
+date: 2016-12-18 21:23:23 12:00:00
 tags:
 ---
 

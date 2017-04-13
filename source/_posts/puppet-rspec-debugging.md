@@ -1,6 +1,6 @@
 ---
 title:  puppet-rspec debugging
-date: 2012-04-03
+date: 2012-04-03 12:00:00
 ---
 While introducing [rspec-puppet](https://github.com/rodjek/rspec-puppet) into a big and grown puppet codebase at Jimdo we needed to debug stuff and get more verbose output while writing the first tests. As the interwebs aren't very chatty about the topic, here for all the distressed googlers:
 

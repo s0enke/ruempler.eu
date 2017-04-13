@@ -1,6 +1,6 @@
 ---
 title: 'Idempotent CloudFormation stack creation/update one-liner with Ansible'
-date: 2017-03-17
+date: 2017-03-17 12:00:00
 ---
 
 When developing CloudFormation templates, I regularly missed an idempotent one-liner command which does something like "create or update stack N with these parameters", which provides a fast feedback loop.

@@ -1,6 +1,6 @@
 ---
 title:  devopsdays Ghent recap
-date: 2014-11-02
+date: 2014-11-02 12:00:00
 ---
 
 **!!! ATTENTION: Highly unstructured braindump content !!!**

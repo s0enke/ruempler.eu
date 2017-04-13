@@ -1,6 +1,6 @@
 ---
 title:  mysql prompt tuning
-date: 2010-10-11
+date: 2010-10-11 12:00:00
 ---
 ```
 mysql> prompt (\u@\h) [\d]>  

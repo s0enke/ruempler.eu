@@ -1,6 +1,6 @@
 ---
 title:  New AWS CloudFormation YAML syntax and variable substitution in action
-date: 2016-09-26
+date: 2016-09-26 12:00:00
 ---
 I've been using CloudFormation YAML syntax for a while now with [Ansible](http://docs.ansible.com/ansible/cloudformation_module.html "http://docs.ansible.com/ansible/cloudformation_module.html") and the [serverless framework](https://serverless.com/ "https://serverless.com/") which would convert the YAML to JSON before uploading the template. That already gave me the YAML advantages of e.g. code comments, not having to care about commas etc.
 

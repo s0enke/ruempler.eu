@@ -1,6 +1,6 @@
 ---
 title:  The PHP Equality Table
-date: 2015-01-03
+date: 2015-01-03 12:00:00
 ---
 Inspired by the "[JavaScript Equality Table](http://dorey.github.io/JavaScript-Equality-Table/ "http://dorey.github.io/JavaScript-Equality-Table/")" I created the same table for PHP:
 

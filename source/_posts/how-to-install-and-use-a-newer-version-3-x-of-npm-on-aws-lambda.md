@@ -1,6 +1,6 @@
 ---
 title:  How to install and use a newer version (3.x) of NPM on AWS Lambda.
-date: 2016-07-19
+date: 2016-07-19 12:00:00
 ---
 My current experiment is to build a serverless deploy pipeline (With AWS CodePipeline) which uses AWS Lambda for the build steps. One step includes to invoke NPM to build a static website out of JavaScript components (which would be deployed to an S3 bucket in a later step).
 
