@@ -1,6 +1,6 @@
 ---
 title:  Diploma thesis
-date: 2013-01-26
+date: 2013-01-26 12:00:00
 ---
 Disclaimer: German.
 

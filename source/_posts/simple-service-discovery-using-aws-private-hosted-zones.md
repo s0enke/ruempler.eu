@@ -1,6 +1,6 @@
 ---
 title: Simple service discovery using AWS Private Hosted Zones
-date: 2015-04-23
+date: 2015-04-23 12:00:00
 ---
 
 
