@@ -1,7 +1,9 @@
 ---
 title: Lesegruppen / Buchclubs in Unternehmen
 date: 2017-04-17 12:00:00
+tags:
 ---
+
 
 ## Buchbesprechungen als Werkzeug für Organisationales Lernen
 
@@ -41,7 +43,7 @@ Hier hilft es auch, dass man selbst "Schwäche zeigt”, z. B. "Ich würde mich 
 
 Hat man seine Lesegruppe gefunden, kann es losgehen! Zuerst sollte ein regelmäßiger Termin, z.B. jede Woche eine Stunde, festgelegt werden. Es ist auch hilfreich, direkt eine Mailingliste oder einen Chat (je nachdem, was im Unternehmen da ist) einzurichten und die Mitglieder einzuladen. Diese können dann für Ankündigungen genutzt werden.
 
-Als nächstes einigt sich die Gruppe darauf, dass​ jedes einzelne Mitglied bis zum ersten Termin ein oder mehrere Kapitel durchgelesen hat.
+Als nächstes einigt sich die Gruppe darauf, dass jedes einzelne Mitglied bis zum ersten Termin ein oder mehrere Kapitel durchgelesen hat.
 Als Empfehlung für den ersten Termin: Lieber mit dem ersten Kapitel oder der Einleitung starten, also nicht zuviel auf einmal am Anfang, denn beim ersten Treffen gibt es bestimmt viel auszutauschen.
 
 Im Treffen geht die Gruppe dann das Kapitel durch, z. B. werden markierte Stellen besprochen. Weiterhin lohnt es sich oft, auch hinter die Referenzen und Fußnoten zu schauen.
