@@ -53,8 +53,8 @@ Ist das Buch zuende gelesen, kann sich die Gruppe entweder auflösen oder direkt
 
 ### Als Unternehmen
 
-- Arbeitszeit freigeben: Als Zeichen, dass das Unternehmen die Weiterbildung seiner Mitarbeiter_innen unterstützt, sollte ein gewisser Anteil der Arbeitszeit "freigegeben" werden für explizite Weiterbildungsmaßnahmen wie z. B. Buchclubs. Ein Beispiel für ein Modell wären z. B. die Besprechungszeit übernimmt das Unternehmen, die Lesezeit die Mitarbeiter_innen.
-- Teamleiter_in mit einbinden: Häufig kommen in Buchbesprechungen dann "Man müsste mal" Themen auf. Hilfreich ist es hier immer, wenn Teamleiter_innen direkt mit dabei sind, so dass Änderungen an Arbeitsprozessen oder Experimente schneller umgesetzt werden können. Häufig werden dann auch Dinge angesprochen, die sonst im Alltag untergehen würden.
+- **Arbeitszeit explizit freigeben**: Als Zeichen, dass das Unternehmen die Weiterbildung seiner Mitarbeiter_innen unterstützt, sollte ein gewisser Anteil der Arbeitszeit "freigegeben" werden für explizite Weiterbildungsmaßnahmen wie z. B. Buchclubs. Ein Beispiel für ein Modell wären z. B. die Besprechungszeit übernimmt das Unternehmen, die Lesezeit die Mitarbeiter_innen.
+- **Teamleiter_in mit einbinden**: Häufig kommen in Buchbesprechungen dann "Man müsste mal" Themen auf. Hilfreich ist es hier immer, wenn Teamleiter_innen direkt mit dabei sind, so dass Änderungen an Arbeitsprozessen oder Experimente schneller umgesetzt werden können. Häufig werden dann auch Dinge angesprochen, die sonst im Alltag untergehen würden.
 
 ## Zusammenfassung
 
