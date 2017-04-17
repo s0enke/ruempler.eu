@@ -43,14 +43,9 @@ Hier hilft es auch, dass man selbst "Schwäche zeigt”, z. B. "Ich würde mich 
 
 Hat man seine Lesegruppe gefunden, kann es losgehen! Zuerst sollte ein regelmäßiger Termin, z.B. jede Woche eine Stunde, festgelegt werden. Es ist auch hilfreich, direkt eine Mailingliste oder einen Chat (je nachdem, was im Unternehmen da ist) einzurichten und die Mitglieder einzuladen. Diese können dann für Ankündigungen genutzt werden.
 
-Als nächstes einigt sich die Gruppe darauf, dass jedes einzelne Mitglied bis zum ersten Termin ein oder mehrere Kapitel durchgelesen hat.
-Als Empfehlung für den ersten Termin: Lieber mit dem ersten Kapitel oder der Einleitung starten, also nicht zuviel auf einmal am Anfang, denn beim ersten Treffen gibt es bestimmt viel auszutauschen.
+Als nächstes einigt sich die Gruppe darauf, dass jedes einzelne Mitglied bis zum ersten Termin ein oder mehrere Kapitel durchgelesen hat. Als Empfehlung für den ersten Termin: Lieber mit dem ersten Kapitel oder der Einleitung starten, also nicht zuviel auf einmal am Anfang, denn beim ersten Treffen gibt es bestimmt viel auszutauschen.
 
-Im Treffen geht die Gruppe dann das Kapitel durch, z. B. werden markierte Stellen besprochen. Weiterhin lohnt es sich oft, auch hinter die Referenzen und Fußnoten zu schauen.
-
-Es gibt auch die Möglichkeit, dass ein_e Moderator_in für das Treffen ausgemacht wird, diese_r dann das Kapitel vorstellt und hindurch leitet. 
-
-Mit den entstehenden Diskussionen (siehe oben) ist die Zeit dann meistens auch schneller herum als erwartet.
+Im Treffen geht die Gruppe dann das Kapitel durch, z. B. werden markierte Stellen besprochen. Weiterhin lohnt es sich oft, auch hinter die Referenzen und Fußnoten zu schauen. Es gibt auch die Möglichkeit, dass ein_e Moderator_in für das Treffen ausgemacht wird, diese_r dann das Kapitel vorstellt und hindurch leitet. Mit den entstehenden Diskussionen (siehe oben) ist die Zeit dann meistens auch schneller herum als erwartet.
 
 #### Abschluss des Buches
 
