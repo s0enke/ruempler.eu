@@ -1,6 +1,6 @@
 ---
 title: '"Service Discovery" with AWS Elastic Beanstalk and CloudFormation'
-date: 2017-04-10 12:00:00
+date: 2017-04-09 12:00:00
 ---
 ## How to dynamically pass environment variables to Elastic Beanstalk.
 
