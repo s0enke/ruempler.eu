@@ -1,6 +1,6 @@
 ---
 title: "AWS Continuous Infrastructure Delivery with CodePipeline and CloudFormation: How to pass Stack Parameters"
-date: 2017-04-10 12:00:00
+date: 2017-04-09 12:00:00
 ---
 
 When deploying CloudFormation stacks in a "Continuous Delivery" manner with CodePipeline, one might encounter the challenge to pass many parameters from the CloudFormation stack describing the pipeline to another stack describing the infrastructure to be deployed (in this example a stack named `application`).
