@@ -49,7 +49,7 @@ Im Treffen geht die Gruppe dann das Kapitel durch, z. B. werden markierte Stelle
 
 #### Abschluss des Buches
 
-Ist das Buch zuende gelesen, kann sich die Gruppe entweder auflösen oder direkt ein weiteres Buch finden und somit bestehen bleiben. Bleibt die Gruppe bestehen, ist es aber hilfreich, weitere potentielle Mitglieder in die Gruppe aufzunehmen, um die Diversität zu erhöhen. Denn auch auch Buchclubs sind nicht vor Gruppendynamiken wie [Groupthink](https://de.wikipedia.org/wiki/Gruppendenken) gefeit. Man muss auch aufpassen, dass sich keine [In- und Out-Gruppen](https://de.wikipedia.org/wiki/Eigengruppe_und_Fremdgruppe) bilden (z. B. Mitglieder des Buchclubs, die sich dann "elitärer" fühlen als Nichtmitglieder).
+Ist das Buch zuende gelesen, kann sich die Gruppe entweder auflösen oder direkt ein weiteres Buch finden und somit bestehen bleiben. Bleibt die Gruppe bestehen, ist es aber hilfreich, weitere potentielle Mitglieder in die Gruppe aufzunehmen, um die Diversität zu erhöhen. Denn auch Buchclubs sind nicht vor Gruppendynamiken wie [Groupthink](https://de.wikipedia.org/wiki/Gruppendenken) gefeit. Man muss auch aufpassen, dass sich keine [In- und Out-Gruppen](https://de.wikipedia.org/wiki/Eigengruppe_und_Fremdgruppe) bilden (z. B. Mitglieder des Buchclubs, die sich dann "elitärer" fühlen als Nichtmitglieder).
 
 ### Als Unternehmen
 
