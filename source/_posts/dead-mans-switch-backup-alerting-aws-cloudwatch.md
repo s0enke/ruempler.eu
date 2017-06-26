@@ -1,5 +1,5 @@
 ---
-title: 'Dead man's switch with AWS CloudWatch: Freshness-Alerting for Backups and co'
+title: "Dead man's switch with AWS CloudWatch: Freshness-Alerting for Backups and Co"
 date: 2017-06-26 12:00:00
 ---
 
@@ -14,7 +14,7 @@ While the first one is pretty much standard CloudWatch functionality, the latter
  
 So here is what we did (CloudFormation snippet below):
 
-- Set the check period to the interval during the metric should be sent. E.g. 86400 if it should be sent every day. This instructs CloudWatch to check once per day.
+- Set the check period to the interval during the metric should be sent. E.g. `86400` if the metric should is supposed to be sent every day. This instructs CloudWatch to check once per day.
 - Set evaluation periods to `1`: We want to get alerted immediately when there is no data written or the threshold has been breached. 
 - And now the important one: We have to treat missing data as `breaching`, so that,if there has been no entry within the evaluation period then the alarm gets triggered.
 
