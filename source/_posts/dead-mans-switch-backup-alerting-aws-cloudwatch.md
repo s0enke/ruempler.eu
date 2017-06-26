@@ -5,8 +5,8 @@ date: 2017-06-26 12:00:00
 
 A recent challenge for one of the teams I am currently involved was to find a way in AWS CloudWatch:
 
-1. To monitor if the metric breaches a specified threshold.
-2. To monitor whether a particular metric has been sent to CloudWatch within a specified interval.
+1. To alert if the metric breaches a specified threshold.
+2. To alert if a particular metric has **not** been sent to CloudWatch within a specified interval.
 
 While the first one is pretty much standard CloudWatch functionality, the latter is a bit more tricky. In the Nagios/Icinga world it's called "freshness". You could also call it special case of a "[Dead man's switch](https://en.wikipedia.org/wiki/Dead_man%27s_switch)" for periodic tasks / cronjobs.
 
