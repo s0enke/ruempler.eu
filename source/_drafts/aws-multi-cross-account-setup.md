@@ -27,6 +27,14 @@ The main reason for separating workloads into several distinct AWS accounts is t
 
 My personal interpretation of the very often quoted Conway's Law is that organizational structure defines the technical systems it designs and generates. A company is a complex social system which is formed of human relationships and communications. As a result, companies usually try to break down the organization into smaller autonomous subsystems. A subsystem could be a organizational unit/team or a product/project team. Thus, providing each subsystem their AWS account seems to be natural. It allows teams to make autonomous decisions within their AWS account and reduce communication overhead across subsystem borders as well as dependencies on other subsystems. 
 
+The [folks from scout24 though issued a warning on mapping AWS accounts 1:1 to **teams**](http://techblog.scout24.com/2017/02/how-many-aws-accounts-should-a-company-have/):
+
+> The actual sizing and assignment of accounts is not strictly regulated. We started creating accounts for teams but quickly found out that assigning accounts per product or group of related services makes more sense. Teams are changing members and missions but products are stable until being discontinued. Also products can be clearly related to business units. Therefore we introduced the rule of thumb: 1 business unit == 1 + n accounts. It allows to clearly identify each account with one business unit and gives users freedom to organize resources at will.
+
+I can definitely fully sign that statement as I have many times seen teams splitting and merging or getting reorganised. This is especially true in companies who think they are agile and try to fix problems by reorganizaing people and teams, ignorant of Conways Lay or their Bug Balls of mud. 
+
+Exploring your company's [Bounded Contexts](https://martinfowler.com/bliki/BoundedContext.html) might be another method to find the right sizing and slicing.
+
 ### Ownership and billing
 
 Another advantage is the clarity of ownership when using multiple accounts. This can be enormously important in organizations which are in the transition from having a classical dedicated ops team to a "You built it, you run it." model: If say a dev team spawns a resource in *their AWS account*, it's *their* resource, it's *their* database, it's *their*  whatever. They can move fast, they don't have to mess around with or wait for other teams, but they are also more directly connected to the consequences of their actions.
