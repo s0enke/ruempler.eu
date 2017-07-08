@@ -14,6 +14,7 @@ AWS accounts are logically separated: No AWS account or resource in it can acces
 
 [AWS throttles API access on an per-account basis](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#api-request-rate): So for example imagine some script of Team A is e.g. hammering the EC2 API could result in another Team B's production deployment to fail, if they are in the same AWS account. Finding the cause could be hard or even impossible for Team B. They might even see themselves forced to add retries/backoff to their deployment scripts which further increases load and even more throttling! And last but not least, it adds [accidental complexity](http://codebetter.com/markneedham/2010/03/18/essential-and-accidental-complexity/) to their software.
 
+Additionally there are also [service and resource limits per AWS account](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html). Some of them can be raised, some can't. the probability of running into one of these limits declines if you distribute your AWS resources  across several AWS Accounts.
 ### Security
 
 Maybe you remember [the startup Code Spaces](https://threatpost.com/hacker-puts-hosting-service-code-spaces-out-of-business/106761/) which had all their resources in one AWS account including backup: they got hacked and entirely vaporized within 12 hours.
