@@ -1,5 +1,5 @@
 ---
-title: "Advantages of AWS Multi-Account setups"
+title: "Advantages of AWS Multi-Account Architecture"
 ---
 
 When we begin doing some things in AWS, we usually start with one AWS account and put our resources in it, and things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account strategy very soon if you decided to run production workloads on AWS.
@@ -10,7 +10,7 @@ The main reason for separating workloads into several distinct AWS accounts is t
 
 AWS accounts are logically separated: No AWS account or resource in it can access resources of other AWS accounts by default. Cross-account access is possible, but it has always to be granted in an explicit way, e.g. by granting permissions through IAM or other mechanism specific to an AWS service. 
 
-### AWS throttles API requests per AWS account
+### AWS Per-Account Service and API limits
 
 [AWS throttles API access on an per-account basis](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#api-request-rate): So for example imagine some script of Team A is e.g. hammering the EC2 API could result in another Team B's production deployment to fail, if they are in the same AWS account. Finding the cause could be hard or even impossible for Team B. They might even see themselves forced to add retries/backoff to their deployment scripts which further increases load and even more throttling! And last but not least, it adds [accidental complexity](http://codebetter.com/markneedham/2010/03/18/essential-and-accidental-complexity/) to their software.
 
@@ -46,9 +46,21 @@ Exploring your company's [Bounded Contexts](https://martinfowler.com/bliki/Bound
 
 **Never slice AWS accounts by teams or org units - but rather by Bounded Context, product name, purpose or capability.**
 
+### Making implicit resource sharing harder by design
+
+I guess almost everyone can share a story of one big database in the middle, and tons of applications sharing it (Database Integration).
+
+Sam Newman brings it to the point in "Building Microservices":
+
+> Remember when we talked about the core principles behind good microservices? Strong cohesion and loose coupling — with database integration, we lose both things. Database integration makes it easy for services to share data, but does nothing about sharing behavior. Our internal representation is exposed over the wire to our consumers, and it can be very difficult to avoid making breaking changes, which inevitably leads to a fear of any change at all. Avoid at (nearly) all costs.
+
+The probably best way to get out of this situation is to never get into it. So how did we get in this situation in the first place? I guess usually because humans go the path of least resistance. So the usual way goes like that: Change security group settings and connect directly to the database. And BOOM: it became a shared resource. It's a [broken window](https://pragprog.com/the-pragmatic-programmer/extracts/software-entropy) now. 
+
+I'd argue With separate AWS Accounts it's harder to build an entangled mess. In the described case one would e.g. need to connect e.g. two VPCs from the different AWS accounts first. People might think twice if there is another way of accessing the data source in the other AWS account. E.g. by exposing it via an API. And they go for the VPC peering, they at least have to make that EXPLICIT on BOTH sides that the entangle resources. It's no drive-by change anymore.
+
 ### Ownership and billing
 
-Another advantage is the clarity of ownership when using multiple accounts. This can be enormously important in organizations which are in the transition from a classical dedicated ops team to a "You built it, you run it." model: If let's say a dev team spawns a resource into *their AWS account*, it's *their* resource. It's *their* database, it's *their*  whatever. No throw-over-the-wall. They can move fast, they don't have to mess around with or wait for other teams, but they are also **more directly connected to the consequences of their actions**. 
+Another advantage is the clarity of ownership when using multiple accounts. This can be enormously important in organizations which are in the transition from a classical dedicated ops team to a "You built it, you run it." model: If let's say a dev team spawns a resource into *their AWS account*, it's *their* resource. It's *their* database, it's *their*  whatever. No throw-over-the-wall. They can move fast, they don't have to mess around with or wait for other teams, but they are also **more directly connected to the consequences of their actions**. On the other hand they also can do changes with less fear of breaking things in other contexts because of not-known side effects (remember the entangled database from above?).
 
 Also it makes billing really simple since costs are transparently mapped to the particular AWS accounts (Consolidated Billing), so you get a detailed bill per e.g. business function, environment or whatever you defined as dimensions for your AWS accounts. Again, a direct feedback loop. In contrast, think of a big messy AWS account with one huge bill. That might simply reinforce the still prevailing believe in many enterprises that IT is just [a cost centre](https://en.wikipedia.org/wiki/Cost_centre_(business)).
 
@@ -73,6 +85,10 @@ This sounds like a lot of initial complexity, but I think it's really worth it i
 [AWS Organizations](https://aws.amazon.com/organizations/) does not only simplify the creation of new AWS accounts (it has been a pain in the ass before!), it also helps to govern who can do what: You can structure the AWS accounts you own into a organizational tree and apply policies to specific sub-trees. For example, you could deny the use of a particular service org-wide, for a organizational unit or a single account.
 
 In one of my next articles, I am going to bring some light into the drawbacks of having many AWS accounts, but also how to mitigate these drawbacks with automated account provisioning and governance, so stay tuned!
+
+## Thanks
+
+I want to thank Deniz Adrian for reviewing that article and adding additional points about implicit resource sharing and fearless actions.
 
 ## References
 
