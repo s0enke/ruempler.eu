@@ -2,11 +2,11 @@
 title: "Advantages of AWS Multi-Account Architecture"
 ---
 
-When we begin doing some things in AWS, we usually start with one AWS account and put our resources in it, and things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account strategy very soon if you decided to run production workloads on AWS.
+When we begin doing some things in AWS, we usually start with one AWS account and put our resources in it. And things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account architecture very soon for workloads on AWS.
 
 ## "Blast radius" reduction
 
-The main reason for separating workloads into several distinct AWS accounts is to [limit the so called blast radius](https://www.slideshare.net/AmazonWebServices/aws-reinvent-2016-reduce-your-blast-radius-by-using-multiple-aws-accounts-per-region-and-service-sec304). It means to contain issues, problems or leaks **by design** so that only one portion of the infrastructure is affected when things go wrong and to prevent them from leaking / cascading into other accounts.
+One of the most important reasons for separating workloads into several distinct AWS accounts is to [limit the so called blast radius](https://www.slideshare.net/AmazonWebServices/aws-reinvent-2016-reduce-your-blast-radius-by-using-multiple-aws-accounts-per-region-and-service-sec304). It means to contain issues, problems or leaks **by design** so that only one portion of the infrastructure is affected when things go wrong and to prevent them from leaking / cascading into other accounts.
 
 AWS accounts are logically separated: No AWS account or resource in it can access resources of other AWS accounts by default. Cross-account access is possible, but it has always to be granted in an explicit way, e.g. by granting permissions through IAM or other mechanism specific to an AWS service. 
 
@@ -88,7 +88,7 @@ In one of my next articles, I am going to bring some light into the drawbacks of
 
 ## Thanks
 
-I want to thank Deniz Adrian for reviewing that article and adding additional points about implicit resource sharing and fearless actions.
+I want to thank [Deniz Adrian](https://twitter.com/zinedlabs) for reviewing that article and adding additional points about implicit resource sharing and fearless actions.
 
 ## References
 
