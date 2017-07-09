@@ -1,4 +1,5 @@
 ---
+date: "2017-07-09 12:00"
 title: "Advantages of AWS Multi-Account Architecture"
 ---
 
