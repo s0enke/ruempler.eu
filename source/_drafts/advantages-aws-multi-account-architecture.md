@@ -48,7 +48,7 @@ Exploring your company's [Bounded Contexts](https://martinfowler.com/bliki/Bound
 
 ### Making implicit resource sharing harder by design
 
-I guess almost everyone can share a story of one big database in the middle, and tons of applications sharing it (Database Integration).
+I guess almost everyone can share a story of one big database in the middle, and tons of applications sharing it ([Database Integration](https://martinfowler.com/bliki/IntegrationDatabase.html)).
 
 Sam Newman brings it to the point in "Building Microservices":
 
