@@ -94,7 +94,7 @@ In one of my next articles, I am going to bring some light into the drawbacks of
 
 ## Thanks
 
-I want to thank [Deniz Adrian](https://twitter.com/zinedlabs) for reviewing that article and adding additional points about implicit resource sharing and fearless actions.
+I want to thank [Deniz Adrian](https://twitter.com/zinedlabs) for reviewing this article and adding additional points about implicit resource sharing and fearless actions.
 
 ## References
 
