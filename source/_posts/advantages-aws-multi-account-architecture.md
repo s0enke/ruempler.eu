@@ -35,8 +35,7 @@ By separating workloads into their own AWS Accounts, we once again reduce the bl
 
 ## Map AWS Accounts to your organizational structure
 
-My personal interpretation of the very often quoted Conway's Law is that organizational structure contributes to the structure of technical systems it designs and generates. A company is a complex social system which is formed of human relationships and communications.
-As a result, companies usually try to break down the organization into smaller autonomous subsystems. A subsystem could be an organizational unit/team or a product/project team. Thus, providing each subsystem their AWS account seems to be natural. It allows teams to make autonomous decisions within their AWS account and reduce communication overhead across subsystem borders as well as dependencies on other subsystems. 
+Companies usually try to break down the organization into smaller autonomous subsystems. A subsystem could be an organizational unit/team or a product/project team. Thus, providing each subsystem their AWS account seems to be natural. It allows teams to make autonomous decisions within their AWS account and reduce communication overhead across subsystem borders as well as dependencies on other subsystems. 
 
 The [folks from scout24 though issued a warning on mapping AWS accounts 1:1 to **teams**](http://techblog.scout24.com/2017/02/how-many-aws-accounts-should-a-company-have/):
 
