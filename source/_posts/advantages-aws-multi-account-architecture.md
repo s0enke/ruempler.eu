@@ -3,7 +3,7 @@ date: "2017-07-09 12:00"
 title: "Advantages of AWS Multi-Account Architecture"
 ---
 
-When we begin doing some things in AWS, we usually start with one AWS account and put our resources in it. And things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account architecture very soon for workloads on AWS.
+When we begin doing some things in AWS, we usually start with a single AWS account and create our AWS resources in it. And things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account architecture very soon for workloads on AWS.
 
 ## "Blast radius" reduction
 
