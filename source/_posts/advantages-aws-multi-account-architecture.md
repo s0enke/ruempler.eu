@@ -5,6 +5,10 @@ title: "Advantages of AWS Multi-Account Architecture"
 
 When we begin doing some things in AWS, we usually start with a single AWS account and create our AWS resources in it. And things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account architecture very soon for workloads on AWS.
 
+## Hard-Limits per Account
+
+AWS has many Hard-Limits per Account. Having multiple AWS Accounts reduces the probability of hitting one of them. There are a few things annoying then having a failing deployment because you hit e.g. the maximum number of EC2 instances per account while rotating autoscaling-groups.
+
 ## "Blast radius" reduction
 
 One of the most important reasons for separating workloads into several distinct AWS accounts is to [limit the so called blast radius](https://www.slideshare.net/AmazonWebServices/aws-reinvent-2016-reduce-your-blast-radius-by-using-multiple-aws-accounts-per-region-and-service-sec304). It means to contain issues, problems or leaks **by design** so that only one portion of the infrastructure is affected when things go wrong and to prevent them from leaking / cascading into other accounts.
