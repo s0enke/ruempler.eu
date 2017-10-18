@@ -5,9 +5,9 @@ title: "Advantages of AWS Multi-Account Architecture"
 
 When we begin doing some things in AWS, we usually start with a single AWS account and create our AWS resources in it. And things can become a mess very fast. This article should give you an overview why you should switch to a using multi-account architecture very soon for workloads on AWS.
 
-## Hard-Limits per Account
+## Hard limits per AWS Account
 
-AWS has many Hard-Limits per Account. Having multiple AWS Accounts reduces the probability of hitting one of them. There are a few things annoying then having a failing deployment because you hit e.g. the maximum number of EC2 instances per account while rotating autoscaling-groups.
+AWS has many "hard limits" per AWS Account, which means that - in contrast to soft limits - they cannot be increased. Having multiple AWS Accounts reduces the probability of hitting one of them. There are a few things annoying then having a failing deployment because you hit e.g. the maximum number of EC2 instances per account while rotating autoscaling-groups.
 
 ## "Blast radius" reduction
 
