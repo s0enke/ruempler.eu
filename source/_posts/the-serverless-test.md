@@ -24,7 +24,7 @@ So let's have a look at use cases or Public cloud services and see if they meet 
 | Product / use case | is it serverless? | why? |  
 | ---- | ---- | ---- |
 | Amazon Elastic Kubernetes Service (EKS) | ❌  | $40 base fee / month
-| Azure AKS | ✅ | No base fee. But also possibliy useless without worker nodes |
+| Azure AKS | 🤔 | No base fee. But also apparently useless without worker nodes |
 | Google Kubernetes Engine (GKE)| ❌ | $74 base fee / month
 | Knative | 🤔 | Depends: <ol><li>is there a base fee for the Kubernetes Cluster (as with EKS and GKE) <li>can the scheduler auto-scale nodes to 0?
 | Serverless Aurora v1 | ✅ | Can [scale to zero](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v1.how-it-works.html#aurora-serverless.how-it-works.auto-scaling)
@@ -41,6 +41,6 @@ So let's have a look at use cases or Public cloud services and see if they meet 
 | Google App Engine Flexible | ❌ | Despite its name, it's not that flexible and needs VMs
 | Akamai Edge Functions | 🤔 | Need to contact sales
 
-I will add more example as they cross my attention.
+I will add more examples as they cross my attention.
 
 Ok, at this point you might be like "So what?". In another article, we will have a look at why scaling to zero is actually a very important and good architectural characteristic. 
