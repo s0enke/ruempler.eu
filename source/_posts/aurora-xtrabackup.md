@@ -14,10 +14,10 @@ I contacted AWS support and luckily got a very knowledgeable contact person (tha
 
 In the end, the problem was an incompatible xtrabackup format with a combination of xbstream and xbcloud. The error message probably (misleadingly) says “5.7.38” since this is the [current default minor version for RDS/MySQL 5.7](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Concepts.VersionMgmt.html).
 
-A plain xtrabackup split in chunks worked for me:
+A plain xtrabackup, split in chunks, worked for me:
 
 ```
-$ xtrabackup --defaults-file=/etc/mysql/debian.cnf --backup  --stream=tar --target-dir=/tmp/dumpidump | gzip - | split -d --bytes=500MB - /tmp/dumpidump/backup.tar.gz
+$ xtrabackup --backup --stream=tar --target-dir=/tmp/dumpidump | gzip - | split -d --bytes=500MB - /tmp/dumpidump/backup.tar.gz
 ```
 In fact, [all methods listed in the documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3) work fine.
 
@@ -27,7 +27,7 @@ After backing up, the backup has to be moved to an S3 bucket:
 aws s3 cp /tmp/dumpidump/ s3://my-database-dumps/aurora-$(date +%s)/ --recursive
 ```
 
-Then, one can create an Aurora cluster from that:
+Then, one can create an Aurora cluster from that backup in S3:
 
 ```
 DB_CLUSTER_IDENTIFIER="aurora-$(date +%s)"
@@ -50,7 +50,7 @@ aws rds restore-db-cluster-from-s3 \
 aws rds create-db-instance \
     --db-cluster-identifier $DB_CLUSTER_IDENTIFIER\
     --db-instance-identifier $DB_CLUSTER_IDENTIFIER \
-    --db-instance-class db.4g.medium \
+    --db-instance-class db.t4g.medium \
     --engine aurora-mysql
 ```
 
