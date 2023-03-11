@@ -25,7 +25,7 @@ index_widgets:
 # - archive
 
 # widget behavior
-archive_type: 'monthly'
+archive_type: 'yearly'
 show_count: false
 
 # Miscellaneous
