@@ -1,6 +1,6 @@
 ---
 date: "2023-03-26 12:00"
-title: "Why "real serverless scale-to-zero and no-pay-for-idle are important"
+title: "Why real serverless scale-to-zero and no-pay-for-idle are important"
 ---
 
 Having defined what is serverless and what not in the last article, this time let's have a look at one particular characteristic of serverless systems: they can scale to zero also known as: you don't pay for idling resources. So let's discuss why this is actually very important.
