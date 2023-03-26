@@ -40,9 +40,3 @@ And then often some "fascinating" accidental complexity happens:
 1) Allocating costs in shared resources is not possible out of the box - at least in AWS. How do you know which container or load balancer route/request belongs to which team? So you get base costs not allocated to any product/team. Like in the old VM/bare-metal days again. 
 
 So in short: You loose most the advantages of a serverless architecture when introducing shared infrastructure. You even most likely increased the total cost of ownership because the shared infrastructure has to be maintained by a human with a salary.
-
-
-## How to create serverless freedom while still being compliant?
-
-## But serverless architecture get too expensive 
-
