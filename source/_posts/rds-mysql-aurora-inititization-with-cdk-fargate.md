@@ -15,7 +15,6 @@ First, let's create a database cluster:
 const dbCluster = new aws_rds.DatabaseCluster(this, 'dbCluster', {
     ...
     instanceProps: {
-        instanceType: new aws_ec2.InstanceType('t4g.medium'),
         vpc: vpc,
         securityGroups: [
             dbSecurityGroup,
@@ -33,7 +32,7 @@ taskDefinition.addContainer('initContainer', {
     image: aws_ecs.ContainerImage.fromRegistry('public.ecr.aws/docker/library/mysql:5.7'),
     essential: false,
     secrets: {
-        MYSQL_PWD: aws_ecs.Secret.fromSecretsManager(props.dbCluster.secret!, 'password'),
+        MYSQL_PWD: aws_ecs.Secret.fromSecretsManager(dbCluster.secret!, 'password'),
     },
     command: [
         'bash',
