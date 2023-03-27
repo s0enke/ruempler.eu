@@ -66,12 +66,10 @@ Other containers that depend on the database initialization can now depend via E
 ```typescript
 containerDependingOnInitContainer.addContainerDependencies({
     container: initContainer,
-    condition: aws_ecs.ContainerDependencyCondition.COMPLETE,
+    condition: aws_ecs.ContainerDependencyCondition.SUCCESS,
 });
 ```
-This will start the `containerDependingOnInitContainer` only after the `initContainer` has exited.
-
-If you want to make sure that dependant containers are only started after the database initialization is successful, you can use the `aws_ecs.ContainerDependencyCondition.SUCCESS` condition.
+This will start the `containerDependingOnInitContainer` when the  database initialization has been successful.
  
 Please also note that at least one container in the task definition must be marked as `essential: true`. Otherwise, the service refuses to start.
 
