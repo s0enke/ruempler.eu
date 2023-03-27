@@ -27,7 +27,7 @@ const dbCluster = new aws_rds.DatabaseCluster(this, 'dbCluster', {
 So far, nothing special. Now, let's create a one-off container which is running a `mysql` client and connects to the database. We'll use the [official MySQL Docker image](https://hub.docker.com/_/mysql) and run a simple `mysql` command to create a database user in the Aurora cluster:
 
 ```typescript 
-const taskDefinition = new aws_ecs.FargateTaskDefinition(this, 'taskDefinition');
+const initContainer = new aws_ecs.FargateTaskDefinition(this, 'initContainer');
 taskDefinition.addContainer('initContainer', {
     image: aws_ecs.ContainerImage.fromRegistry('public.ecr.aws/docker/library/mysql:5.7'),
     essential: false,
@@ -46,9 +46,9 @@ taskDefinition.addContainer('initContainer', {
     ],
 });
 
-const dbMonitoringService = new aws_ecs.FargateService(this, 'dbMonitoringService', {
-    cluster: dbMonitoringEcsCluster, // omitted for brevity
-    taskDefinition: dbMonitoringTaskDefinition,
+const fargateService = new aws_ecs.FargateService(this, 'fargateService', {
+    cluster: cluster, // omitted for brevity
+    taskDefinition: initContainer,
     ...
 });
 ```
@@ -61,15 +61,15 @@ The `essential` flag is set to `false`, so the container will not be restarted a
 
 Otherwise, you can use the `-f` flag is used to force the execution of the MySQL commands, even if some of them fail.
 
-Other containers that depend on the database initialzation can now depend via ECS container dependencies on the `initContainer`:
+Other containers that depend on the database initialization can now depend via ECS container dependencies on the `initContainer`:
 
 ```typescript
 containerDependingOnInitContainer.addContainerDependencies({
-    container: dbMonitoringInitContainer,
+    container: initContainer,
     condition: aws_ecs.ContainerDependencyCondition.COMPLETE,
 });
 ```
-This will start the `containerDependingOnInitContainer` only after the `dbMonitoringInitContainer` has exited.
+This will start the `containerDependingOnInitContainer` only after the `initContainer` has exited.
 
 If you want to make sure that dependant containers are only started after the database initialization is successful, you can use the `aws_ecs.ContainerDependencyCondition.SUCCESS` condition.
  
