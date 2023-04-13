@@ -1,6 +1,6 @@
 ---
 date: "2023-04-13 12:00"
-title: "Minimizing downtimes when managing AWS RDS parameter groups with CloudFormation
+title: "Minimizing downtimes when managing AWS RDS parameter groups with CloudFormation"
 ---
 
 When managing RDS parameter groups with CloudFormation, you might have noticed that changes to a DB cluster or instance parameter group will always cause a reboot of the RDS instance. This happens when the RDS cluster or instance parameter group and the RDS instance are managed by the same CloudFormation stack.
