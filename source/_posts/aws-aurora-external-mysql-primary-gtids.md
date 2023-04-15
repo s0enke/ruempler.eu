@@ -5,6 +5,9 @@ title: "Setting up MySQL Aurora replication from an external primary with GTIDs 
 
 Setting up Amazon Aurora as a replica of an external MySQL primary is a common way of synchronizing and/or migrating self-managed MySQL databases to RDS/Aurora.
 
+<!--more-->
+
+
 Nowadays, using [GTIDs for MySQL](https://dev.mysql.com/doc/refman/8.0/en/replication-gtids.html) is the preferred way of doing replication, for example, because it offers features such as auto-position and thus makes it easy to change replication topologies.
 
 According to the [AWS docs](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/mysql-replication-gtid.html) and also [AWS blogs](https://aws.amazon.com/blogs/database/migrating-to-amazon-aurora-mysql-with-fallback-option-using-gtid-based-replication/), it’s possible to use GTID for replication from an external primary into Aurora.

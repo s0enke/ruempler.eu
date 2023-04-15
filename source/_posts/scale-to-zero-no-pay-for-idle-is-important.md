@@ -5,6 +5,8 @@ title: "Why real serverless scale-to-zero and no-pay-for-idle are important"
 
 Having defined what is serverless and what not in the last article, this time let's have a look at one particular characteristic of serverless systems: they can scale to zero also known as: you don't pay for idling resources. So let's discuss why this is actually very important.
 
+<!--more-->
+
 ## Reason 1: Identical Dev/Test/Pre-Prod/Prod infrastructure
 
 Serverless solutions are easy and inexpensive to create and destroy. This leads to huge benefits:
