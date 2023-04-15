@@ -5,6 +5,8 @@ title: "Lessons learned when restoring a MySQL Aurora RDS database from S3/Perco
 
 Recently I was trying to restore a Aurora database from an Percona xtrabackup, the de-facto industry standard for backing up self-managed MySQL databases. Luckily, RDS and Aurora natively support restoring a cluster from Percona xtrabackups. This comes very handy for migrations of big databases  (For more information, check out [the docs](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3) and [this prescriptive guidance article from AWS](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/migrate-on-premises-mysql-databases-to-aurora-mysql-using-percona-xtrabackup-amazon-efs-and-amazon-s3.html)).
 
+<!--more-->
+
 But soon I was stuck with this error message:
 
 ```

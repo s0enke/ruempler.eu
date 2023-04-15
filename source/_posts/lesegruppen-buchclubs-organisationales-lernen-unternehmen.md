@@ -9,6 +9,8 @@ tags:
 
 Auf den devopsdays 2015 in Berlin hatten wir eine Open Space Gruppe, die sich mit dem Thema beschäftigte: "Ich lese viele Bücher, Blogs etc, und würde dieses Wissen gerne in das Unternehmen tragen, in dem ich gerade arbeite". Dabei kam die Idee auf, Lesegruppen zu bilden. Diese Idee fand ich so gut, dass ich sie direkt einmal ausprobiert habe. 
 
+<!--more-->
+
 Seitdem habe ich mehrere Buchlesegruppen in Unternehmen (mit-)gegründet und diese "Buchclubs" als als sehr effektives Werkzeug des strukturierten [Organisationales Lernens](https://de.wikipedia.org/wiki/Organisationales_Lernen) schätzen gelernt.
 
 ## Was ist ein Buchclub / eine Lesegruppe?

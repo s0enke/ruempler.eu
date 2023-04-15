@@ -11,6 +11,8 @@ You want to upload a file to S3 with Axios and the `PUT` method.
 
 S3 needs a Content-Length for `PUT` requests, otherwise it throws an 501.
 
+<!--more-->
+
 ## Solution
 
 Upload the file as a stream and pass the size as header.
