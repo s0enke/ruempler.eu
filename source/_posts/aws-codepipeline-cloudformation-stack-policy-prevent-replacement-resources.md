@@ -6,6 +6,8 @@ date: 2017-03-28 12:00:00
 **Update 2019-01-24**: [CloudFormation now natively supports a update policy for replacments with the `UpdateReplacePolicy`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html).
 
 Some operations in CloudFormation trigger a [`REPLACEMENT`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html) of resources which can have unintended and catastrophic consequences, e.g. an RDS instance being replaced (which means that the current database will be **deleted** by CloudFormation after a new one has been created).
+<!--more-->
+
 
 While CloudFormation [does support deletion policies natively](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html) which prevent the deletion of resources, there is no simple way to do this for `REPLACEMENT`s as of writing this. 
 

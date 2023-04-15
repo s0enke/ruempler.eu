@@ -4,6 +4,8 @@ date: 2016-07-19 12:00:00
 ---
 My current experiment is to build a serverless deploy pipeline (With AWS CodePipeline) which uses AWS Lambda for the build steps. One step includes to invoke NPM to build a static website out of JavaScript components (which would be deployed to an S3 bucket in a later step).
 
+<!--more-->
+
 Ok, so let's go ahead and look what is actually installed in the preconfigured Node 4.3 env on AWS Lambda. First we want to find out if NPM is actually already installed. So we just create a new Lambda function which invokes a \`find' command, here is the used source code: 
 
     

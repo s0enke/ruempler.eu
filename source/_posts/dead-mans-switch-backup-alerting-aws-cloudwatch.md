@@ -8,6 +8,8 @@ A recent challenge for one of the teams I am currently involved was to find a wa
 1. To alert if the metric breaches a specified threshold.
 2. To alert if a particular metric has **not** been sent to CloudWatch within a specified interval.
 
+<!--more-->
+
 While the first one is pretty much standard CloudWatch functionality, the latter is a bit more tricky. In the Nagios/Icinga world it's called "freshness". You could also call it special case of a "[Dead man's switch](https://en.wikipedia.org/wiki/Dead_man%27s_switch)" for periodic tasks / cronjobs.
 
  So for example in our case we wanted to have monitored and alerted whether a backup job runs once per day.

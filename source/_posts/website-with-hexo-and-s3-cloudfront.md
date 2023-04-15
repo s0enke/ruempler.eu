@@ -6,6 +6,8 @@ tags:
 
 Over the past days I moved my blog over to AWS CloudFront and S3, powered by the static blog generator [Hexo](https://hexo.io/).
 
+<!--more-->
+
 Here are a few highlights:
 
  - The source code of the website is now open source on [GitHub](https://github.com/s0enke/ruempler.eu).

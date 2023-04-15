@@ -5,7 +5,9 @@ date: 2013-07-07 12:00:00
 **Update:** Using [**an external slave with an RDS master** is now possible as well as **RDS as a slave with an external master**](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html")  
 
 Connecting external MySQL slaves to AWS RDS mysql instances is one of the most wanted features, for example to have migration strategies into and out of RDS or to support strange replication chains for legacy apps. Listening to binlog updates is also a [**great way to update search indexes or to invalidate caches**](https://github.com/noplay/python-mysql-replication).  
-  
+
+<!--more-->
+
 As of now it is possible to access binary logs from outside RDS with [**the release of MySQL 5.6 in RDS**](http://aws.typepad.com/aws/2013/07/mysql-56-support-for-amazon-rds.html). What amazon does not mention is the possibility to connect external slaves to RDS.  
   
 Here is the proof of concept (details on how to set up a master/slave setup is not the focus here :-) )  

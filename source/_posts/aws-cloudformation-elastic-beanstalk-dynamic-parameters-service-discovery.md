@@ -5,7 +5,9 @@ date: 2017-04-09 12:00:00
 ## How to dynamically pass environment variables to Elastic Beanstalk.
 
 Elastic Beanstalk is a great AWS service for managed application hosting. For me personally, it's the Heroku of AWS: Developers can concentrate on developing their application while AWS takes care of all the heavy lifting of scaling, deployment, runtime updates, monitoring, logging etcpp.
-  
+
+<!--more-->
+
 But running applications usually means not only using plain application servers the code runs on, but also databases, caches and so on. And AWS offers many services like ElastiCache or RDS for databases, which should usually preferred in order to have lower maintenance overhead.
 
 So, how do you connect Elastic Beanstalk and other AWS services? For example, your application needs to know the database endpoint of an RDS database in order to use it.

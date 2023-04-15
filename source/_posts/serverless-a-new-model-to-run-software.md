@@ -6,6 +6,8 @@ title: "Serverless - a new model to run backend software"
 For me, serverless has become the default model of developing backend applications.
 However, a meeting a few weeks ago was a reminder for me that not the entire world is embracing serverless applications already: I had the task to design an “Energy Data Importer”, an application that collects time series data from different locations, sanitizes and transforms them and stores them in a database for later lookup. So I went ahead and [sketched the application with AWS serverless building blocks and patterns](https://github.com/s0enke/serverless-aws-timeseries-injector-query-architecture/).
 
+<!--more-->
+
 I also created a [prototype with the CDK](https://github.com/s0enke/serverless-aws-timeseries-injector-query-architecture/) with a working integration/E2E test which included authorization with Cognito Userpools, data upload with S3 presigned URL, event-driven Lambda which transforms the data with Python pandas and the aws-datawranger, and writes the data into an Amazon Timestream time series database. Overall, the proof of concept infrastructure and application code had 200 lines of code. And of course with all the advantages which come mostly for free with serverless applications: built-in resilience, high availability, security, elasticity/auto-scaling, cost-effectivity (no pay for idle), near-zero total cost of ownership, and so on. And also with the advantages of IAC: repeatable deployments etc.
 
 I presented the architecture to three people that apparently had never seen serverless architectures before, and they seemed somehow overwhelmed and skeptical. The main three concerns/remarks I remember were:

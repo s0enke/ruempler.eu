@@ -7,6 +7,8 @@ A recurring task when provisioning databases is to initialize them with  initial
 
 In the CDK world, there is currently no native support for this, but there are some workarounds. AWS has a [blog post](https://aws.amazon.com/blogs/database/automating-database-initialization-with-aws-cloud-development-kit/) about this, but it's using a Lambda function, and a bunch of custom code which seemed like too much operational overhead for me. 
 
+<!--more-->
+
 In this post, I’ll show how to initialize a MySQL RDS/Aurora database with CDK, a Fargate container, and simple `mysql` commands.
 
 First, let's create a database cluster:

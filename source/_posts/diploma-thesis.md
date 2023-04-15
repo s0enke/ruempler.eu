@@ -8,6 +8,8 @@ Auch [Aaron Swartz](http://en.wikipedia.org/wiki/Aaron_Swartz#Death) zu Ehren - 
 
 In der Diplomarbeit wird untersucht, inwiefern die Anwendung agiler und Lean- Softwarentwicklungsmethoden wie Scrum, Software Kanban, Extreme programming und DevOps schon [Wissensmanagement](http://de.wikipedia.org/wiki/Wissensmanagement) implizit "betreiben".
 
+<!--more-->
+
 Hierzu werden die einzelnen Methodenbausteine (z. B. "Daily Standup" oder "Pair programming") vor dem Hintergrund des [Wissensmanagement als Geschäftsprozess](http://www.artm-friends.at/am/km/basics/mod-willke-d.html) untersucht. Daraus wird ein Wissensmanagementmodell entwickelt, welches sich am Unternehmen Jimdo ausrichtet.
 
 Vielen Dank an meine Frau Mila, [Boris](https://twitter.com/3oris), [Judith](http://www.judithandresen.com/) und [Bracki](https://twitter.com/bracki), die fleißig und unermüdlich korrekturgelesen sowie wichtige inhaltliche Kritik geliefert haben!

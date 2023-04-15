@@ -7,6 +7,8 @@ date: 2016-12-19  12:00:00
 This is a follow-up of my AWSAdvent article [Serverless everything: One-button serverless deployment pipeline for a serverless app
 ](https://www.awsadvent.com/2016/12/14/serverless-everything-one-button-serverless-deployment-pipeline-for-a-serverless-app/), which extends the example deployment pipeline with AWS CodeBuild.
 
+<!--more-->
+
 Deployment pipelines are very common today, as they are usually part of a continuous delivery/deployment workflow. While it's possible to use e.g. projects like [Jenkins](https://jenkins.io/) or [concourse](https://concourse.ci/) for those pipelines, I prefer using managed services in order to minimize operations and maintenance so I can concentrate on generating business value. Luckily, AWS has a service called CodePipeline which makes it easy to create deployment pipelines with several stages and actions such as downloading the source code from GitHub, and executing build steps.
 
 For the build steps, there are several options like invoking an external Jenkins Job, or SoranoCi etcpp. But when you want to stay in AWS land, your options were quite limited until recently. The only pure AWS option for CodePipeline build steps (without adding operational overhead, e.g. managing servers or containers) was invoking Lambda functions, which has several drawbacks that I all experienced:

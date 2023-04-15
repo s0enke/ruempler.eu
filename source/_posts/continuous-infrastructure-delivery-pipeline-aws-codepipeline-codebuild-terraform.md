@@ -9,7 +9,9 @@ tags:
 ![Overview](overview.png)
 
 This article explores how to build low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipelines for [Terraform](https://www.terraform.io), by using AWS building blocks CloudFormation, CodePipeline and CodeBuild.
- 
+
+<!--more-->
+
 ## CloudFormation
 
 CloudFormation is the built-in solution for Infrastructure-as-Code (Iac) in AWS. It's usually a good choice because it offers a low-maintenance and easy-to-start solution. On the other hand, it can have some drawbacks based on the use case or the usage level. Here are some points which pop up regularly:
