@@ -5,6 +5,8 @@ title: "🤔 The serverless test"
 
 There is a lot of buzz and marketing around the term "serverless". This article aims to dismantle what's serverless and what not - with practical examples.
 
+<!--more-->
+
 ## Definition
 
 So first, we need a definition of serverless. A good start might be Wikipedia:

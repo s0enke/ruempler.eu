@@ -7,6 +7,8 @@ the last weekend i attended to **[devopsdays](http://www.devopsdays.org/)** in h
 [DevOps](http://en.wikipedia.org/wiki/DevOps) is a relatively young movement of people that think developers, operations and also QA have to work together instead of
 creating departments and isles. It's about **communication** and **automation of software delivery processes**.
 
+<!--more-->
+
 For example [Jez Humble](http://twitter.com/jezhumble) had a talk on "[Continuous Delivery](http://continuousdelivery.com/)" (the book is must read) which is the brother of Continuous Integration: If you integrate continuous why not deploy it continuously. **Rule 1: DONE MEANS RELEASED**
 
 How does that fit with Scrum? Scrum says: DONE MEANS "PASSES ACCEPTANCE TESTS" and will be released "somewhen" (well, yes, this is my very personal problem with scrum ;) )

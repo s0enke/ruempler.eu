@@ -4,6 +4,8 @@ date: 2010-07-11 12:00:00
 ---
 Today I finally managed to set up an incremental backup for my workstation. What do we need? Well, nothing more than **[rdiff-backup](http://rdiff-backup.nongnu.org/)**, an opensource command line tool with all the powers you need.
 
+<!--more-->
+
 it just backups. and your last backup is always available 1:1 at the destination (no strange storage formats etc., just dirs and files). Diffs and metadata are stored separately. So if you want a
 backup that does its job, is plain, is easy to restore, has no unneccessary features and "just works" than rdiff-backup is the right tool for you.
 

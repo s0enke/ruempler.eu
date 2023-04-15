@@ -5,6 +5,8 @@ date: 2014-11-02 12:00:00
 
 **!!! ATTENTION: Highly unstructured braindump content !!!**
 
+<!--more-->
+
 ### Day 1
 
 #### [The Self-Steering Organization: From Cybernetics to DevOps and Beyond](http://www.slideshare.net/ingineeringit/from-cybernetics-to-devops-and-beyond)

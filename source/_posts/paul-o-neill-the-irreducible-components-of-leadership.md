@@ -6,6 +6,8 @@ tags:
 
 This is an annotated transcription from [Paul O'Neill's talk on leadership](https://www.youtube.com/watch?v=htLCVqaLBvo) - in my opinion the most powerful and inspiring talk I have ever seen on leadership. I decided to transcribe it (well, Youtube did the most work with its automatic subtitles feature), because there are so many great quotes in it and I wanted to have it as a source for myself, e.g. for futures articles, so I always have a written reference.
 
+<!--more-->
+
 So here it is - if you find any errors, please do not hesitate [to open a pull request](https://github.com/s0enke/ruempler.eu/pulls):
 
 I want to talk to you about leadership concepts this morning because I believe this: And I have now spent a lot of time working in a variety of ways in health and medical care and I choose to talk about the leadership component because I believe this: With leadership anything is possible and without it nothing is possible. So I'm going to define for you if I can what it is I mean by a leadership what is it that we should expect a leader to do. First of all I think **it's necessary for a real leader to articulate what I call unarguable goals and aspirations for the institution that they lead.** That doesn't mean that I think they should invent them themselves in a dark claws of middle of the night, but I believe it's a really important critical role for a true leader to articulate non arguable goals.
