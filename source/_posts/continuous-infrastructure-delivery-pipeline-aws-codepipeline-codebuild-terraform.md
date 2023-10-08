@@ -6,7 +6,7 @@ date: 2017-02-26 14:27:59
 tags:
 ---
 
-![Overview](overview.png)
+![Overview](/2017/02/26/continuous-infrastructure-delivery-pipeline-aws-codepipeline-codebuild-terraform/overview.png)
 
 This article explores how to build low-maintenance [Continuous Delivery](https://martinfowler.com/books/continuousDelivery.html) pipelines for [Terraform](https://www.terraform.io), by using AWS building blocks CloudFormation, CodePipeline and CodeBuild.
 
@@ -89,11 +89,11 @@ You need a GitHub repository containing one or more `.tf` files, which will in t
 
 Once the CloudFormation stack has been created, the CodePipeline will run initially:
   
-![CodePipeline screenshot](pipeline.png)
+![CodePipeline screenshot](/2017/02/26/continuous-infrastructure-delivery-pipeline-aws-codepipeline-codebuild-terraform/pipeline.png)
 
 The `InvokeTerraformAction` will call CodeBuild, which looks like this:
 
-![CodeBuild log output screenshot](codebuild.png)
+![CodeBuild log output screenshot](/2017/02/26/continuous-infrastructure-delivery-pipeline-aws-codepipeline-codebuild-terraform/codebuild.png)
 
 ## Stronger together
 
