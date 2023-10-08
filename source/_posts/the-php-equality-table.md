@@ -6,6 +6,6 @@ Inspired by the "[JavaScript Equality Table](http://dorey.github.io/JavaScript-E
 
 <!--more-->
 
-![](table.png)
+![](/2015/01/03/the-php-equality-table/table.png)
 
 Source can be found in this [Gist](https://gist.github.com/s0enke/37e0e93d833af1a004a1 "https://gist.github.com/s0enke/37e0e93d833af1a004a1").

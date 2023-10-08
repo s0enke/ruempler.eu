@@ -60,7 +60,7 @@ But wait, now we need to specify the entire PHZ domain (`snakeoil.prod.internal`
   
 This is where [DHCP option sets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html") come into play. We can just create a new one which includes `snakeoil.prod.internal`:
 
-![](dopt.png)
+![](/2015/04/23/simple-service-discovery-using-aws-private-hosted-zones/dopt.png)
 
 Once we associated our VPC with this DHCP option set, we can omit the domain part as it's now part of the search domain (propagated via DHCP):
 
