@@ -100,8 +100,8 @@ Now we are ready to create an Aurora blue/green deployment. As of writing the CD
 $ aws rds create-blue-green-deployment \
   --blue-green-deployment-name blue-green-mysql8 \
   --source <cluster arn> \
-  --target-db-cluster-parameter-group-name <> \
-  --target-db-parameter-group-name aurorabluegreencdkstack-dbinstanceparametergroup980eefbb-vj6mqvc1qvid  \
+  --target-db-cluster-parameter-group-name <clusterParameterGroupMysql8> \
+  --target-db-parameter-group-name <dbInstanceParameterGroupMysql8>  \
   --target-engine-version 8.0.mysql_aurora.3.04.0
 ```
 
