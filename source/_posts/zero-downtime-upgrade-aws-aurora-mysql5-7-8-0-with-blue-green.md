@@ -5,6 +5,8 @@ date: 2023-10-08 00:00:00
 
 This article demonstrates how to upgrade an CDK (or Cloudformation)-managed AWS Aurora cluster from MySQL 5.7 compatible AWS Aurora 2 to MySQL compatible Aurora 3 engine without any - ok, I lied - one minute of downtime. The process utilizes the [blue/green deployment feature](https://aws.amazon.com/blogs/aws/new-fully-managed-blue-green-deployments-in-amazon-aurora-and-amazon-rds/) of Aurora. It also shows how CDK/CloudFormation stacks are brought back in sync with the upgraded Aurora clusters.
 
+<!--more-->
+
 ## Prerequisite: Create a Aurora 2 / MySQL 5.7 cluster
 
 First, for the sake of the example, let's create an Aurora 2.11 cluster including a writer and a reader with AWS CDK:
