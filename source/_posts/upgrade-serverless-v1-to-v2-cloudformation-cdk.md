@@ -71,7 +71,7 @@ const dbCluster = new aws_rds.ServerlessCluster(this, 'AuroraCluster', {
 });
 ```
 
-Now after making all resources explicit, we can check with another `cdk diff` that the Cloudformation will not try to delete anything the cluster depends on:
+Now after making all resources explicit, we can ensure with another `cdk diff` that Cloudformation will not try to delete anything the cluster depends on:
 
 ```
 ➜  serverless-v1-upgrade-cdk git:(master) ✗ npx cdk diff  
@@ -82,7 +82,7 @@ Resources
 [-] AWS::RDS::DBCluster AuroraCluster AuroraCluster23D869C0 orphan
 ```
 
-The SecretTargetAttachment is still there, and it will be deleted by the CloudFormation stack, since it's not referenced anymore by the `AuroraCluster` resource. But it will be recreated in the `import` step later. 
+The SecretTargetAttachment is still there, and it will be deleted by CloudFormation, since it's not referenced anymore by the `AuroraCluster` resource. But it will be recreated in the `import` step later. 
 
 ## Step 2: Prepare for upgrade: Change the engine mode to "provisioned"
 
@@ -155,7 +155,7 @@ After that it's a good idea to run a CloudFormation drift detection to make sure
 Now it's time to upgrade the provisioned cluster to Aurora 3 / MySQL 8.0. I have already described how to do this in [Zero-downtime upgrade from AWS Aurora 2 (MySQL 5.7) to version 3 (MySQL 8.0) with the CDK and Aurora Blue/Green deployments
 ](https://ruempler.eu/2023/10/08/zero-downtime-upgrade-aws-aurora-mysql5-7-8-0-with-blue-green/), so please follow the steps there.
 
-# Step 4: Changing the engine mode back to "serverless"
+## Step 4: Changing the engine mode back to "serverless"
 
 Welcome back. We have now a provisioned cluster with MySQL 8.0. First, let's add a serverless reader "instance" to the cluster which we can promote to the new writer later. This step is necessary to avoid extended downtime, which would happen if we would simply change the type from `provisioned` to `serverless`.
 
