@@ -3,9 +3,12 @@ title: Upgrade CDK/Cloudformation-managed AWS Aurora Serverless v1 (MySQL 5.7) c
 date: 2023-12-31 12:00:00
 ---
 
-Since [AWS is going to sunset / auto-uprade Aurora Serverless v1 in December 2024](https://www.reddit.com/r/aws/comments/18sx0i6/aurora_serverless_v1_eol_december_31_2024/), it's time to upgrade to Aurora Serverless v2. Upgrading to Serverless v2 MySQL instances also means upgrading from MySQL 5.7 to MySQL 8.0 under the hood.
+Since [AWS is going to sunset / auto-upgrade Aurora Serverless v1 in December 2024](https://www.reddit.com/r/aws/comments/18sx0i6/aurora_serverless_v1_eol_december_31_2024/), it's time to upgrade to Aurora Serverless v2. Upgrading to Serverless v2 MySQL instances also means upgrading from MySQL 5.7 to MySQL 8.0 under the hood.
 
 This article describes how to adapt the [AWS provided upgrade path](https://aws.amazon.com/blogs/database/upgrade-from-amazon-aurora-serverless-v1-to-v2-with-minimal-downtime/) to work with a CDK / CloudFormation infrastructure-as-code project, which requires a few more steps which I call the "**CDK/CloudFormation retain-and-import dance**".
+
+<!--more-->
+
 
 The dance needs to be done since a direct modification via CloudFormation would result a replacement of the cluster, since [CloudFormation does not support the modification of the engine mode from `serverless` to `provisioned`](https://github.com/aws-cloudformation/cloudformation-coverage-roadmap/issues/1743).
 
