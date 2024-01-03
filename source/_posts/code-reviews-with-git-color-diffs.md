@@ -7,7 +7,7 @@ Code reviews can be very time-consuming. Especially if you are reviewing a lot o
 
 <!--more-->
 
-This is where git colored move diffs come into play. They make it easier to detect and display code moves in another color than other code changes. 
+This is where git colored move diffs come into play. They make it easier to detect and display code moves in a different color than other code changes. 
 
 ## How to use git colored move diffs on demand
 
@@ -24,7 +24,7 @@ You can also set different color schemes for moved code, I prefer the `dimmed-ze
 git diff --color-moved=dimmed-zebra
 ```
 
-Here's an example screenshot of how a code move looks like with git colored move diffs and `dimmed-zebra` setting. The moved code is grey, so you can easily spot it the real change, `% 5` changed to `% 8`, which might have been accidentally introduced during the code move. (Which is bad since it mixes a refactoring and a behvioral change in one commit - but that's a different story):
+Here's an example screenshot of how a code move looks like with git colored move diffs and `dimmed-zebra` setting. The moved code is grey, so you can easily spot it the real change, `% 5` changed to `% 8`, which might have been accidentally introduced during the code move (which I consider harmful since it mixes a refactoring and a behavioral change into one commit - but that's a different story):
 
 ![Example of how a code move looks like with git colored move diffs](/2023/12/31/code-reviews-with-git-color-diffs/example.png)
 
