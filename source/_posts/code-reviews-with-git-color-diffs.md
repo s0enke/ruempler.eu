@@ -1,9 +1,9 @@
 ---
-title: Easier Code reviews with Git Colored Moves
+title: Easier Code reviews with Git Colored Move Diffs
 date: 2024-01-01
 ---
 
-Code reviews can be very time-consuming. Especially if you are reviewing a lot of code changes. Often, code changes are simple refactorings, such as extracting code into methods/functions or moving code around. These changes are more or less irrelevant for the reviewer, since they usually don't change the behavior of the code. As reviewer, one still wants to make sure that code hasn't been changed during the code move.
+Code reviews can be very time-consuming. Especially if you are reviewing a lot of code changes. Often, code changes are simple refactorings, such as extracting code into methods/functions or moving code around. These changes are more or less irrelevant for the review, since they usually don't change the behavior of the code. As a reviewer, one still wants to make sure that code hasn't been changed during the code move.
 
 <!--more-->
 
