@@ -1,6 +1,6 @@
 ---
 title: Easier Code reviews with Git Colored Move Diffs
-date: 2024-01-01
+date: 2023-12-31 12:00:00
 ---
 
 Code reviews can be very time-consuming. Especially if you are reviewing a lot of code changes. Often, code changes are simple refactorings, such as extracting code into methods/functions or moving code around. These changes are more or less irrelevant for the review, since they usually don't change the behavior of the code. As a reviewer, one still wants to make sure that code hasn't been changed during the code move.
@@ -23,6 +23,10 @@ You can also set different color schemes for moved code, I prefer the `dimmed-ze
 ```bash
 git diff --color-moved=dimmed-zebra
 ```
+
+Here's an example screenshot of how a code move looks like with git colored move diffs and `dimmed-zebra` setting. The moved code is grey, so you can easily spot it the real change, `% 5` changed to `% 8`, which might have been accidentally introduced during the code move. (Which is bad since it mixes a refactoring and a behvioral change in one commit - but that's a different story):
+
+![Example of how a code move looks like with git colored move diffs](/2023/12/31/code-reviews-with-git-color-diffs/example.png)
 
 There is also an option to ignore whitespace changes in moved code:
 ```bash
