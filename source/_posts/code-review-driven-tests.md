@@ -31,3 +31,7 @@ Review-Driven Testing might lead to the following benefits:
 1. **Promoting a testing culture in a test-averse environment**: Through the positive exposure of having tests added during the Review-Driven Testing process, developers are more likely to include tests in their initial pull requests in the future. This method encourages a testing culture within development teams.
 
 In conclusion, while im a fan of Test-Driven Development (TDD) which advocates writing tests before code, Review-Driven Testing offers a valuable alternative in TDD-averse environments for enhancing code quality after development, upskilling developers, and fostering a culture of testing.
+
+## References
+
+ - [Test Driven Code-Reviews: A Code Review Technique which actually increases the Code as well as Test Quality](https://medium.com/@CognitiveProgrammer/test-driven-code-reviews-a-code-review-technique-which-actually-increases-the-code-as-well-as-e82d0f0b6884)
