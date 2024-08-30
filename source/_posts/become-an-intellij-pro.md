@@ -1,0 +1,65 @@
+---
+date: "2024-08-30 12:00"
+title: "Become an IntelliJ Pro - by learning these shortcuts"
+---
+
+...
+
+<!--more-->
+
+## File Navigation
+
+### Show last edited files.: Cmd+E
+
+This is very useful for quickly switching between files you have recently edited. Cmd+e + Enter will go to the last editid file.
+
+### Search for file names: Cmd+Shift+O
+
+### Search for symbols: Cmd+O
+
+## TDD / Testing
+
+### Switch between implementation and test: Cmd+Shift+T
+
+### Run all tests in a file: Ctrl+Shift+R
+
+### Run a single test: Ctrl+Shift+R
+
+## Debugging
+
+### Debug a test: Ctrl+Shift+D
+
+### Toggle breakpoint: Cmd+F8
+
+## Code navigating
+
+### Gradually expand the selection to the enclosing code block: Option+Up
+
+This is very useful for selecting a method or a block of code.
+
+### Move current code block up or down: Cmd+Shift+up/down
+
+This is very useful for reordering methods or moving code around.
+
+### Go to definition: Cmd+B
+
+### Move between last edited locations: Cmd+[ and Cmd+]
+
+## Code refactoring
+
+### Rename a variable/method/class/file: Shift+F6
+
+### Extract a method: Cmd+Alt+M
+
+Will also ask you if it should replace copy and pasted code.
+
+### Extract a variable: Cmd+Alt+V
+
+Will also ask you if it should replace copy and pasted code.
+
+### Extract a constant: Cmd+Alt+C
+
+Will also ask you if it should replace copy and pasted code.
+
+### Inline a variable/method/constant/...   : Cmd+Alt+N
+
