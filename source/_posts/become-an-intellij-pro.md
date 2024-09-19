@@ -17,20 +17,6 @@ This is very useful for quickly switching between files you have recently edited
 
 ### Search for symbols: Cmd+O
 
-## TDD / Testing
-
-### Switch between implementation and test: Cmd+Shift+T
-
-### Run all tests in a file: Ctrl+Shift+R
-
-### Run a single test: Ctrl+Shift+R
-
-## Debugging
-
-### Debug a test: Ctrl+Shift+D
-
-### Toggle breakpoint: Cmd+F8
-
 ## Code navigating
 
 ### Gradually expand the selection to the enclosing code block: Option+Up
@@ -44,6 +30,8 @@ This is very useful for reordering methods or moving code around.
 ### Go to definition: Cmd+B
 
 ### Move between last edited locations: Cmd+[ and Cmd+]
+
+### Find usages: Alt+F7
 
 ## Code refactoring
 
@@ -62,4 +50,32 @@ Will also ask you if it should replace copy and pasted code.
 Will also ask you if it should replace copy and pasted code.
 
 ### Inline a variable/method/constant/...   : Cmd+Alt+N
+
+Will also ask you whether it should remove the inlined code fragment.
+
+## Multi line editing
+
+### Add something to the end of lines
+
+...
+### Prepend something to the start of lines
+
+...
+
+### Put something in the middle of all lines
+
+## TDD / Testing
+
+### Switch between implementation and test: Cmd+Shift+T
+
+### Run all tests in a file: Ctrl+Shift+R
+
+### Run a single test: Ctrl+Shift+R
+
+## Debugging
+
+### Debug a test: Ctrl+Shift+D
+
+### Toggle breakpoint: Cmd+F8
+
 
