@@ -1,5 +1,5 @@
 # Header
-subtitle: Freelance Cloud Architect and Software Engineer
+subtitle: Cloud Architect and Software Engineer
 menu:
   Home: /
   About: /about
@@ -31,7 +31,7 @@ archive_type: 'yearly'
 show_count: false
 
 # Miscellaneous
-google_analytics: 
+google_analytics:
 favicon: /favicon.png
 twitter: s0enke
 google_plus:
