@@ -7,6 +7,7 @@ title: "Become an IntelliJ Pro - by learning these shortcuts"
 
 <!--more-->
 
+
 ## File Navigation
 
 ### Show last edited files.: Cmd+E
@@ -16,6 +17,7 @@ This is very useful for quickly switching between files you have recently edited
 ### Search for file names: Cmd+Shift+O
 
 ### Search for symbols: Cmd+O
+
 
 ## Code navigating
 
@@ -31,7 +33,11 @@ This is very useful for reordering methods or moving code around.
 
 ### Move between last edited locations: Cmd+[ and Cmd+]
 
-### Find usages: Alt+F7
+### Find usages: Option/Alt+F7
+
+### Switch to last file: Ctrl+tab
+
+### Open last files: Cmd+E
 
 ## Code refactoring
 
@@ -53,6 +59,7 @@ Will also ask you if it should replace copy and pasted code.
 
 Will also ask you whether it should remove the inlined code fragment.
 
+
 ## Multi line editing
 
 ### Add something to the end of lines
@@ -64,13 +71,14 @@ Will also ask you whether it should remove the inlined code fragment.
 
 ### Put something in the middle of all lines
 
+
 ## TDD / Testing
 
 ### Switch between implementation and test: Cmd+Shift+T
 
-### Run all tests in a file: Ctrl+Shift+R
+### Run test under cursor: Ctrl+Shift+R
 
-### Run a single test: Ctrl+Shift+R
+#### Run last again: Ctrl+R
 
 ## Debugging
 
