@@ -206,11 +206,7 @@ end note
 
 If locking via the database is not enough for your use case, you can implement your own locking mechanism, e.g. with Redis or Memcached. 
 
-## Conclusion
-
-The Lost Update Problem is a common issue in concurrent systems, which can lead to inconsistencies in the database. Fortunately, there are several ways to solve this problem, such as using the `SERIALIZABLE` isolation level, `SELECT ... FOR UPDATE`, optimistic locking, or rolling your own locking mechanism. Each approach has its own trade-offs, so it's important to choose the right solution for your use case.
-
-References:
+## References
 
 - [A beginner’s guide to database locking and the lost update phenomena](https://vladmihalcea.com/a-beginners-guide-to-database-locking-and-the-lost-update-phenomena/)
 - [Isolation Levels in MySQL](https://dev.mysql.com/doc/refman/8.4/en/innodb-transaction-isolation-levels.html)
