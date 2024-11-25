@@ -1,6 +1,6 @@
 ---
 title: Solutions to the Lost Update Problem
-date: 2024-25-10 12:00:00
+date: 2024-11-25 12:00:00
 ---
 
 The **Lost Update Problem** is a common issue in concurrent systems, where two transactions read the same data, modify it, and write it back to the database. The second transaction will overwrite the changes made by the first transaction, causing the first transaction's changes to be lost.
