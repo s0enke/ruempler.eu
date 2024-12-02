@@ -69,4 +69,3 @@ During the above debugging process, I also tried out restoring into a plain MySQ
 If you get this error, your source engine version is probably TOO NEW. Plain MySQL RDS cannot restore backups created from newer versions than the current default minor version (currently 5.7.38). I tried to create a backup from 5.7.41, but that version was too new. You would have to downgrade the backup source, or migrate to Aurora (which can also handle newer minor versions). IN general, restoring into plain MySQL RDS, [has many more limitations](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Limitations), e.g. it’s not possible to restore from S3 files which are KMS-encrypted (default S3 encryption works, though).
 
 When googling for the errors listed here, I got nothing useful, so I hope my article might point some folks on the right path.
-
