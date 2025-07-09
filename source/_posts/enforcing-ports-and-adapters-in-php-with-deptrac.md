@@ -22,13 +22,14 @@ Let's assume the following directory structure:
 
 ```
 PackageA/
+    SomeAClass.php
 Core/
+    Logger.php
 PackageB/
+    SomeBClass.php
 PackageC/
 ```
-
-And the following files:
-
+And the following files/classes:
 
 ### `src/PackageA/SomeAClass.php`
 ```php
