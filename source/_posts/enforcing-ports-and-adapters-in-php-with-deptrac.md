@@ -78,6 +78,34 @@ class SomeBClass
     }
 }
 ```
+Here's a simple UML diagram to visualize the dependencies between these classes:
+```plantuml
+@startuml
+
+left to right direction
+
+package "PackageA" {
+    class SomeAClass {
+        + doSomethingAThingA(SomeBClass $someBClass, Logger $logger): void
+    }
+}
+package "Core" {
+    class Logger {
+        + log(): void
+    }
+}
+
+package "PackageB" {
+    class SomeBClass {
+        + doSomethingBThingy(): void
+    }
+}
+
+SomeAClass::doSomethingAThingA --> Logger::log
+SomeAClass::doSomethingAThingA --> SomeBClass::doSomethingBThingy
+@enduml
+
+```
 
 In this example we want to make sure that `PackageA` can only access `Core` and `PackageB`, but not `PackageC`. We can use deptrac to enforce this rule.
 
