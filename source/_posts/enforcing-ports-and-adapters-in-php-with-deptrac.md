@@ -21,40 +21,40 @@ A typical big ball of mud monolith still has some kind of structure, e.g. "packa
 Let's assume the following directory structure:
 
 ```
-PackageA/
-    SomeAClass.php
-Core/
+Order/
+    OrderProcessor.php
+Infrastructure/
     Logger.php
-PackageB/
-    SomeBClass.php
-PackageC/
+Payment/
+    PaymentGateway.php
+Billing/
 ```
 And the following files/classes:
 
-### `src/PackageA/SomeAClass.php`
+### `src/Order/OrderProcessor.php`
 ```php
 <?php
 
-namespace DeptracPortsAdaptersSample\PackageA;
+namespace DeptracPortsAdaptersSample\Order;
 
-use DeptracPortsAdaptersSample\Core\Logger;
-use DeptracPortsAdaptersSample\PackageB\SomeBClass;
+use DeptracPortsAdaptersSample\Infrastructure\Logger;
+use DeptracPortsAdaptersSample\Payment\PaymentGateway;
 
-class SomeAClass
+class OrderProcessor
 {
-    public function doSomethingAThingA(SomeBClass $someBClass, Logger $logger): void
+    public function processOrder(PaymentGateway $PaymentGateway, Logger $logger): void
     {
-        $someBClass->doSomethingBThingy();
+        $PaymentGateway->charge();
         $logger->log();
     }
 }
 ```
 
-### `src/Core/Logger.php`
+### `src/Infrastructure/Logger.php`
 ```php
 <?php
 
-namespace DeptracPortsAdaptersSample\Core;
+namespace DeptracPortsAdaptersSample\Infrastructure;
 
 class Logger
 {
@@ -64,16 +64,16 @@ class Logger
 }
 ```
 
-### `src/PackageB/SomeBClass.php`
+### `src/Payment/PaymentGateway.php`
 ```php
 <?php
 
-namespace DeptracPortsAdaptersSample\PackageB;
+namespace DeptracPortsAdaptersSample\Payment;
 
-class SomeBClass
+class PaymentGateway
 {
 
-    public function doSomethingBThingy(): void
+    public function charge(): void
     {
     }
 }
@@ -84,30 +84,30 @@ Here's a simple UML diagram to visualize the dependencies between these classes:
 
 left to right direction
 
-package "PackageA" {
-    class SomeAClass {
-        + doSomethingAThingA(SomeBClass $someBClass, Logger $logger): void
+package "Order" {
+    class OrderProcessor {
+        + processOrder(PaymentGateway $PaymentGateway, Logger $logger): void
     }
 }
-package "Core" {
+package "Infrastructure" {
     class Logger {
         + log(): void
     }
 }
 
-package "PackageB" {
-    class SomeBClass {
-        + doSomethingBThingy(): void
+package "Payment" {
+    class PaymentGateway {
+        + charge(): void
     }
 }
 
-SomeAClass::doSomethingAThingA --> Logger::log
-SomeAClass::doSomethingAThingA --> SomeBClass::doSomethingBThingy
+OrderProcessor::processOrder --> Logger::log
+OrderProcessor::processOrder --> PaymentGateway::charge
 @enduml
 
 ```
 
-In this example we want to make sure that `PackageA` can only access `Core` and `PackageB`, but not `PackageC`. We can use deptrac to enforce this rule.
+In this example we want to make sure that `Order` can only access `Infrastructure` and `Payment`, but not `Billing`. We can use deptrac to enforce this rule.
 
 ## Enforcing vertical boundaries with deptrac
 
@@ -118,22 +118,22 @@ deptrac:
   paths:
     - ./src
   layers:
-    - name: Core
+    - name: Infrastructure
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\Core\\.*
-    - name: PackageA
+          value: DeptracPortsAdaptersSample\\Infrastructure\\.*
+    - name: Order
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageA\\.*
-    - name: PackageB
+          value: DeptracPortsAdaptersSample\\Order\\.*
+    - name: Payment
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageB\\.*
-    - name: PackageC
+          value: DeptracPortsAdaptersSample\\Payment\\.*
+    - name: Billing
       collectors:
         - type: classLike
-          value: DeptracPortsAdaptersSample\\PackageC\\.*
+          value: DeptracPortsAdaptersSample\\Billing\\.*
 ```
 
 So each package becomes a 'layer' in deptrac. 
@@ -143,14 +143,14 @@ If we run deptrac, we already see two violations:
 
 ```
  -------------------------- ------------------------------------------------------------------------------------------------------------------ 
-  Reason                     PackageA                                                                                                          
+  Reason                     Order                                                                                                          
  -------------------------- ------------------------------------------------------------------------------------------------------------------ 
-  DependsOnDisallowedLayer   DeptracPortsAdaptersSample\PackageA\SomeAClass must not depend on DeptracPortsAdaptersSample\PackageB\SomeBClass  
-                             You are depending on token that is a part of a layer that you are not allowed to depend on. (PackageB)            
-                             /var/www/html/src/PackageA/SomeAClass.php:10                                                                      
-  DependsOnDisallowedLayer   DeptracPortsAdaptersSample\PackageA\SomeAClass must not depend on DeptracPortsAdaptersSample\Core\Logger          
-                             You are depending on token that is a part of a layer that you are not allowed to depend on. (Core)                
-                             /var/www/html/src/PackageA/SomeAClass.php:10                                                                      
+  DependsOnDisallowedLayer   DeptracPortsAdaptersSample\Order\OrderProcessor must not depend on DeptracPortsAdaptersSample\Payment\PaymentGateway  
+                             You are depending on token that is a part of a layer that you are not allowed to depend on. (Payment)            
+                             /var/www/html/src/Order/OrderProcessor.php:10                                                                      
+  DependsOnDisallowedLayer   DeptracPortsAdaptersSample\Order\OrderProcessor must not depend on DeptracPortsAdaptersSample\Infrastructure\Logger          
+                             You are depending on token that is a part of a layer that you are not allowed to depend on. (Infrastructure)                
+                             /var/www/html/src/Order/OrderProcessor.php:10                                                                      
  -------------------------- ------------------------------------------------------------------------------------------------------------------ 
 
 
@@ -166,15 +166,15 @@ If we run deptrac, we already see two violations:
  -------------------- ----- 
 ```
 
-deptrac has detected that `PackageA` is depending on `PackageB` and `Core`, which is currently not allowed, so let's adapt the config:
+deptrac has detected that `Order` is depending on `Payment` and `Infrastructure`, which is currently not allowed, so let's adapt the config:
 
 ```yaml
 deptrac:
   ...
   ruleset:
-    PackageA:
-      - Core
-      - PackageB
+    Order:
+      - Infrastructure
+      - Payment
 ```
 
 Now, if we run deptrac again, we see that the violations are gone:
@@ -194,6 +194,6 @@ Now, if we run deptrac again, we see that the violations are gone:
 
 Congratulations, you have successfully set up a basic deptrac configuration to enforce vertical architectural boundaries in your PHP monolith!
 
-Usually, that's only the first step, since allowing to call all classes in `Core` and `PackageB` from `PackageA` is not a good idea, as it will lead to a lot of dependencies between the packages.
+Usually, that's only the first step, since allowing to call all classes in `Infrastructure` and `Payment` from `Order` is not a good idea, as it will lead to a lot of dependencies between the packages.
 
-It's better to define a clear API of what PackageA exposes to the outside world. In Ports & Adapters, this is usually done by defining a 'driven' port interface. That's what we will cover in the next part of this series.
+It's better to define a clear API of what Order exposes to the outside world. In Ports & Adapters, this is usually done by defining a 'driven' port interface. That's what we will cover in the next part of this series.
