@@ -3,8 +3,9 @@ date: "2025-06-27 12:00:00"
 title: "From Big Ball of Mud to Modulith: Introducing and keeping a clean architecture in PHP with Deptrac"
 ---
 
-While Deptrac is commonly used to enforce horizontal boundaries within PHP projects, it can also help define and maintain vertical boundaries (such as bounded contexts in DDD speak, or [quanta](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/ch04.html)) in PHP monoliths.
-This capability is especially valuable when implementing the Ports and Adapters architecture, ensuring clear separation of concerns and robust modularity in your PHP applications.
+While Deptrac is commonly used to enforce horizontal boundaries within PHP projects, it can also help define and maintain vertical boundaries (such as [Bounded Contexts](https://martinfowler.com/bliki/BoundedContext.html) in DDD speak, or [Quanta](https://www.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/ch04.html)) in PHP monoliths.
+
+This capability is especially valuable when implementing the [Hexagonal aka. Ports and Adapters architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)), ensuring clear separation of concerns and robust modularity in your PHP applications.
 
 This three-part series will cover:
 
