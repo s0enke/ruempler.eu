@@ -10,7 +10,7 @@ This capability is especially valuable when implementing the [Hexagonal aka. Por
 This three-part series will cover:
 
 - Part 1: Setting up a basic Deptrac configuration for a PHP monolith (this post)
-- Part 2: Refactoring spaghetti code into bounded contexts using Ports and Adapters
+- [Part 2: Refactoring spaghetti code into bounded contexts using Ports and Adapters](/2025/11/09/enforcing-ports-and-adapters-in-php-with-deptrac-part2/)
 - Part 3: Enforcing architectural boundaries in your CI pipeline
 
 <!--more-->
@@ -197,4 +197,4 @@ Congratulations, you have successfully set up a basic deptrac configuration to e
 
 Usually, that's only the first step, since allowing to call all classes in `Infrastructure` and `Payment` from `Order` is not a good idea, as it will lead to a lot of dependencies between the packages.
 
-It's better to define a clear API of what Order exposes to the outside world. In Ports & Adapters, this is usually done by defining a 'driven' port interface. That's what we will cover in the next part of this series.
+It's better to define a clear API of what Order exposes to the outside world. In Ports & Adapters, this is usually done by defining a 'driven' port interface. That's what we will cover in the [next part of this series](/2025/11/09/enforcing-ports-and-adapters-in-php-with-deptrac-part2/).
