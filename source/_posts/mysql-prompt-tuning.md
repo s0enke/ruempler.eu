@@ -1,6 +1,7 @@
 ---
 title:  mysql prompt tuning
 date: 2010-10-11 12:00:00
+categories: til
 ---
 ```
 mysql> prompt (\u@\h) [\d]>  
