@@ -1,6 +1,7 @@
 ---
 date: "2022-09-13 12:00"
 title: "How to (PUT) upload files to S3 with Typescript and Axios"
+categories: til
 ---
 
 ## Situation
